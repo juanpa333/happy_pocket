@@ -1,0 +1,15 @@
+Host
+ec2-18-211-97-89.compute-1.amazonaws.com
+Database
+dagobu2l7p43v6
+User
+peietnvrlphjjl
+Port
+5432
+Password
+a565e2b1f143f82a8d0c83a69612dc7ca2bc22124cb400df0e9fafa9c859ad36
+URI
+postgres://peietnvrlphjjl:a565e2b1f143f82a8d0c83a69612dc7ca2bc22124cb400df0e9fafa9c859ad36@ec2-18-211-97-89.compute-1.amazonaws.com:5432/dagobu2l7p43v6
+
+Heroku CLI
+heroku pg:psql postgresql-deep-47538 --app happy-pocket
