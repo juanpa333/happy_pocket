@@ -27,6 +27,8 @@ $(document).ready(function(){
     });
   });
 
+ 
+
   $(document).ready(function(){
     $("#pildora3").mouseenter(function(){
       $(this).css({"background-color": "darkblue", "color": "white"});
