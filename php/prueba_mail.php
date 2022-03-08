@@ -1,7 +1,7 @@
 <?php
 // Start with PHPMailer class
 use PHPMailer\PHPMailer\PHPMailer;
-require_once '../vendor/autoload.php';
+require_once 'vendor/autoload.php';
 // create a new object
 $mail = new PHPMailer();
 // configure an SMTP
