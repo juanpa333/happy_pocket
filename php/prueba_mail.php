@@ -1,28 +1,31 @@
 <?php
-$curl = curl_init();
-curl_setopt_array($curl, array(
-    CURLOPT_URL => $_ENV['TRUSTIFI_URL'] . "/api/i/v1/email",
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_ENCODING => "",
-    CURLOPT_MAXREDIRS => 10,
-    CURLOPT_TIMEOUT => 0,
-    CURLOPT_FOLLOWLOCATION => true,
-    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => "POST",
-    CURLOPT_POSTFIELDS =>"{\"recipients\":[{\"email\":\"gomezjp@gmail.com\"}],\"title\":\"Title\",\"html\":\"Body\"}",
-    CURLOPT_HTTPHEADER => array(
-        "x-trustifi-key: " . $_ENV['TRUSTIFI_KEY'],
-        "x-trustifi-secret: " . $_ENV['TRUSTIFI_SECRET'],
-        "content-type: application/json"
-    )
-));
-
-$response = curl_exec($curl);
-$err = curl_error($curl);
-curl_close($curl);
-if ($err) {
-    echo "cURL Error #:" . $err;
+// Start with PHPMailer class
+use PHPMailer\PHPMailer\PHPMailer;
+require_once './vendor/autoload.php';
+// create a new object
+$mail = new PHPMailer();
+// configure an SMTP
+$mail->isSMTP();
+$mail->Host = 'smtp.mailtrap.io';
+$mail->SMTPAuth = true;
+$mail->Username = '96c4b694dd0f22';
+$mail->Password = '0546543dcdab86';
+$mail->SMTPSecure = 'tls';
+$mail->Port = 2525;
+$mail->setFrom('eb27c9c1-a148-4fa4-bcae-2a8d4993d166@heroku.com', 'Your Hotel');
+$mail->addAddress('gomezjp@gmail.com', 'Me');
+$mail->Subject = 'Thanks for choosing Our Hotel!';
+// Set HTML
+$mail->isHTML(TRUE);
+$mail->Body = '<html>Hi there, we are happy to <br>confirm your booking.</br> Please check the document in the attachment.</html>';
+$mail->AltBody = 'Hi there, we are happy to confirm your booking. Please check the document in the attachment.';
+// add attachment
+$mail->addAttachment('//confirmations/yourbooking.pdf', 'yourbooking.pdf');
+// send the message
+if(!$mail->send()){
+    echo 'Message could not be sent.';
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
-    echo $response;
+    echo 'Message has been sent';
 }
 ?>
