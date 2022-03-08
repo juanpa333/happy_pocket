@@ -1,4 +1,11 @@
 
+    // Validar que se ingrese nombre sin caracteres especiales
+
+    // Validar que se ingrese  @ en el campo del email
+
+    // validar que si este chequeada caasilla de terminos y condiciones
+
+
     
     $(document).ready(function(){
   $("#boton_formulario").click(function(){
