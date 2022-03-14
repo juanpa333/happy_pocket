@@ -85,7 +85,7 @@
          
         if(!(correo1.match(mailformat)))
     {
-      $("#validador_correo2").show();
+      $("#validador_correo3").show();
     }
           
       if(nombre1 == null || nombre1 == "") {
