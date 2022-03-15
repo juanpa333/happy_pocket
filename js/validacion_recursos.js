@@ -47,20 +47,20 @@
   
     
       let mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-      let nombre1 = $("#entrada_formulario_nombre2").val();
-      let correo1 = $("#entrada_formulario_correo2").val();
+      let nombre2 = $("#entrada_formulario_nombre2").val();
+      let correo2 = $("#entrada_formulario_correo2").val();
        
-      if(!(correo1.match(mailformat)))
+      if(!(correo2.match(mailformat)))
   {
     $("#validador_correo2").show();
   }
         
-    if(nombre1 == null || nombre1 == "") {
+    if(nombre2 == null || nombre2 == "") {
   
       $("#validador_nombre2").show();
     }
   
-    if(!(correo1.match(mailformat)) || (nombre1 == null || nombre1 == "") )
+    if(!(correo2.match(mailformat)) || (nombre2 == null || nombre2 == "") )
   
     {}
     else{
@@ -80,24 +80,65 @@
     
       
         let mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-        let nombre1 = $("#entrada_formulario_nombre3").val();
-        let correo1 = $("#entrada_formulario_correo3").val();
+        let nombre3 = $("#entrada_formulario_nombre3").val();
+        let correo3 = $("#entrada_formulario_correo3").val();
          
-        if(!(correo1.match(mailformat)))
+        if(!(correo3.match(mailformat)))
     {
       $("#validador_correo3").show();
     }
           
-      if(nombre1 == null || nombre1 == "") {
+      if(nombre3 == null || nombre3 == "") {
     
         $("#validador_nombre3").show();
       }
     
-      if(!(correo1.match(mailformat)) || (nombre1 == null || nombre1 == "") )
+      if(!(correo3.match(mailformat)) || (nombre3 == null || nombre3 == "") )
     
       {}
       else{
-      $("#link_recurso3_modal").fadeIn(1000); }
+      $("#link_recurso3_modal").fadeIn(1000);
+      $.ajax({
+        // la URL para la petición
+        url : 'php/queries_db.php',
+     
+        // la información a enviar
+        // (también es posible utilizar una cadena de datos)
+        data : { 
+                 nombre : nombre3 ,
+                 email : correo3
+                },
+     
+        // especifica si será una petición POST o GET
+        type : 'POST',
+     
+        // el tipo de información que se espera de respuesta
+        dataType : 'json',
+     
+        // código a ejecutar si la petición es satisfactoria;
+        // la respuesta es pasada como argumento a la función
+        success : function(json) {
+                    
+      
+        },
+     
+        // código a ejecutar si la petición falla;
+        // son pasados como argumentos a la función
+        // el objeto jqXHR (extensión de XMLHttpRequest), un texto con el estatus
+        // de la petición y un texto con la descripción del error que haya dado el servidor
+        error : function(jqXHR, status, error) {
+        // alert(error);
+        },
+     
+      //  código a ejecutar sin importar si la petición falló o no
+        complete : function(jqXHR, status) {
+           // alert('Petición realizada');
+           // alert(json.status);
+        }
+    });
+    
+    
+    }
         //$("#link_recurso1_modal").removeClass("d-none");
        
       
@@ -123,6 +164,6 @@
 
 
     
-    
+   
 
   

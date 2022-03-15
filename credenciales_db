@@ -13,3 +13,7 @@ postgres://peietnvrlphjjl:a565e2b1f143f82a8d0c83a69612dc7ca2bc22124cb400df0e9faf
 
 Heroku CLI
 heroku pg:psql postgresql-deep-47538 --app happy-pocket
+
+
+Heroku login from web browser
+https://cli-auth.heroku.com/auth/cli/callback?code=1b95021d-807b-4c76-b2ba-f41f8a980cb2&state=481cecaa-9cc8-48c0-89a6-133bd5408004
