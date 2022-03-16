@@ -33,7 +33,49 @@
 
   {}
   else{
-  $("#link_recurso1_modal").fadeIn(1000); }
+  $("#link_recurso1_modal").fadeIn(1000);
+
+  $.ajax({
+    // la URL para la petición
+    url : 'php/queries_db.php',
+ 
+    // la información a enviar
+    // (también es posible utilizar una cadena de datos)
+    data : { 
+             nombre : nombre1 ,
+             email : correo1 ,
+             recurso : 1
+            },
+ 
+    // especifica si será una petición POST o GET
+    type : 'POST',
+ 
+    // el tipo de información que se espera de respuesta
+    dataType : 'json',
+ 
+    // código a ejecutar si la petición es satisfactoria;
+    // la respuesta es pasada como argumento a la función
+    success : function(json) {
+                
+  
+    },
+ 
+    // código a ejecutar si la petición falla;
+    // son pasados como argumentos a la función
+    // el objeto jqXHR (extensión de XMLHttpRequest), un texto con el estatus
+    // de la petición y un texto con la descripción del error que haya dado el servidor
+    error : function(jqXHR, status, error) {
+    // alert(error);
+    },
+ 
+  //  código a ejecutar sin importar si la petición falló o no
+    complete : function(jqXHR, status) {
+       // alert('Petición realizada');
+       // alert(json.status);
+    }
+})
+
+}
     //$("#link_recurso1_modal").removeClass("d-none");
    
   
@@ -64,7 +106,49 @@
   
     {}
     else{
-    $("#link_recurso2_modal").fadeIn(1000); }
+    $("#link_recurso2_modal").fadeIn(1000);
+      
+    $.ajax({
+      // la URL para la petición
+      url : 'php/queries_db.php',
+   
+      // la información a enviar
+      // (también es posible utilizar una cadena de datos)
+      data : { 
+               nombre : nombre2 ,
+               email : correo2 , 
+               recurso : 2
+              },
+   
+      // especifica si será una petición POST o GET
+      type : 'POST',
+   
+      // el tipo de información que se espera de respuesta
+      dataType : 'json',
+   
+      // código a ejecutar si la petición es satisfactoria;
+      // la respuesta es pasada como argumento a la función
+      success : function(json) {
+                  
+    
+      },
+   
+      // código a ejecutar si la petición falla;
+      // son pasados como argumentos a la función
+      // el objeto jqXHR (extensión de XMLHttpRequest), un texto con el estatus
+      // de la petición y un texto con la descripción del error que haya dado el servidor
+      error : function(jqXHR, status, error) {
+      // alert(error);
+      },
+   
+    //  código a ejecutar sin importar si la petición falló o no
+      complete : function(jqXHR, status) {
+         // alert('Petición realizada');
+         // alert(json.status);
+      }
+  })
+  
+  }
       //$("#link_recurso1_modal").removeClass("d-none");
      
     
@@ -106,7 +190,9 @@
         // (también es posible utilizar una cadena de datos)
         data : { 
                  nombre : nombre3 ,
-                 email : correo3
+                 email : correo3 ,
+                 recurso : 3 
+                             
                 },
      
         // especifica si será una petición POST o GET
