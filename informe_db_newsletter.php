@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="css/style_hp.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <title>Bienvenid@ a Happy Pocket</title>
+    <title>Informe newsletter- Happy Pocket</title>
     <link rel="icon" type="image/png" href="recursos/icono.png">
     <link href="css/carousel.css" rel="stylesheet">
     
@@ -157,14 +157,15 @@
 
 <div class="container">
   <div class="row">
+    <h4 class="text-center fw-bold">Informe de Base de datos "Newsletter"</h4>
 <?php
 $servername = "173.201.185.75";  // Host del servidor donde está alojada la base de datos
 $username = "gomezjp"; // Usuario creado en la base de datos del servidor
 $password = "4upratos3";
 $dbname = "i7730950_wp2"; 
 
-echo "<table style='border: solid 1px black;'>";
-echo "<tr><th>Id</th><th>nombre</th><th>email</th><th>fecha</th><th>recurso</th></tr>";
+echo "<table class='table table-striped table-hover' style='border: solid 1px black;'>";
+echo "<tr><th>Id</th><th>Nombre</th><th>e-mail</th><th>Fecha</th><th>Recurso</th></tr>";
 
 class TableRows extends RecursiveIteratorIterator {
   function __construct($it) {
