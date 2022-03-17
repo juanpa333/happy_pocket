@@ -10,6 +10,8 @@
        $("#validador_nombre3").hide();
        $("#validador_correo3").hide();
        $("#validador_terminos1").hide();
+       $("#validador_terminos2").hide();
+       $("#validador_terminos3").hide();
       
    $("#boton_envio_datos").click(function(){
     $("#validador_correo1").hide();
@@ -19,9 +21,7 @@
     let mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     let nombre1 = $("#entrada_formulario_nombre1").val();
     let correo1 = $("#entrada_formulario_correo1").val();
-   
-  
-    let terminos1 = $("#flexCheckChecked1").prop("checked");
+   let terminos1 = $("#flexCheckChecked1").prop("checked");
   
     if(!(correo1.match(mailformat)))
 {
@@ -96,23 +96,30 @@
      $("#boton_envio_datos2").click(function(){
       $("#validador_correo2").hide();
       $("#validador_nombre2").hide();
+      $("#validador_terminos2").hide();
   
     
       let mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
       let nombre2 = $("#entrada_formulario_nombre2").val();
       let correo2 = $("#entrada_formulario_correo2").val();
+      let terminos2 = $("#flexCheckChecked2").prop("checked");
        
       if(!(correo2.match(mailformat)))
   {
     $("#validador_correo2").show();
   }
+  if(terminos2 == false){
+
+ 
+    $("#validador_terminos2").show();
+   }
         
     if(nombre2 == null || nombre2 == "") {
   
       $("#validador_nombre2").show();
     }
   
-    if(!(correo2.match(mailformat)) || (nombre2 == null || nombre2 == "") )
+    if(!(correo2.match(mailformat)) || (nombre2 == null || nombre2 == "") || (terminos2 == false) )
   
     {}
     else{
@@ -171,27 +178,35 @@
        $("#boton_envio_datos3").click(function(){
         $("#validador_correo3").hide();
         $("#validador_nombre3").hide();
+        $("#validador_terminos3").hide();
     
       
         let mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
         let nombre3 = $("#entrada_formulario_nombre3").val();
         let correo3 = $("#entrada_formulario_correo3").val();
+        let terminos3 = $("#flexCheckChecked3").prop("checked");
          
         if(!(correo3.match(mailformat)))
     {
       $("#validador_correo3").show();
     }
+    if(terminos3 == false){
+  
+   
+      $("#validador_terminos3").show();
+     }
           
       if(nombre3 == null || nombre3 == "") {
     
         $("#validador_nombre3").show();
       }
     
-      if(!(correo3.match(mailformat)) || (nombre3 == null || nombre3 == "") )
+      if(!(correo3.match(mailformat)) || (nombre3 == null || nombre3 == "") || (terminos3 == false) )
     
       {}
       else{
       $("#link_recurso3_modal").fadeIn(1000);
+        
       $.ajax({
         // la URL para la petición
         url : 'php/queries_db.php',
@@ -200,9 +215,8 @@
         // (también es posible utilizar una cadena de datos)
         data : { 
                  nombre : nombre3 ,
-                 email : correo3 ,
-                 recurso : 3 
-                             
+                 email : correo3 , 
+                 recurso : 3
                 },
      
         // especifica si será una petición POST o GET
@@ -231,8 +245,7 @@
            // alert('Petición realizada');
            // alert(json.status);
         }
-    });
-    
+    })
     
     }
         //$("#link_recurso1_modal").removeClass("d-none");
@@ -240,7 +253,6 @@
       
       
          });
-  
 
 
    });
