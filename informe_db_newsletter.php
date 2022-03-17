@@ -164,7 +164,7 @@ $username = "gomezjp"; // Usuario creado en la base de datos del servidor
 $password = "4upratos3";
 $dbname = "i7730950_wp2"; 
 
-echo "<table class='table table-striped table-hover' style='border: solid 1px black;'>";
+echo "<table class='table table-dark table-hover' style='border: solid 1px black;'>";
 echo "<tr><th>Id</th><th>Nombre</th><th>e-mail</th><th>Fecha</th><th>Recurso</th></tr>";
 
 class TableRows extends RecursiveIteratorIterator {

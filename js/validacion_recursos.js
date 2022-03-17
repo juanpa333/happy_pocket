@@ -9,27 +9,37 @@
        $("#link_recurso3_modal").hide();
        $("#validador_nombre3").hide();
        $("#validador_correo3").hide();
+       $("#validador_terminos1").hide();
       
    $("#boton_envio_datos").click(function(){
     $("#validador_correo1").hide();
     $("#validador_nombre1").hide();
-
+    $("#validador_terminos1").hide();
   
     let mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     let nombre1 = $("#entrada_formulario_nombre1").val();
     let correo1 = $("#entrada_formulario_correo1").val();
-     
+   
+  
+    let terminos1 = $("#flexCheckChecked1").prop("checked");
+  
     if(!(correo1.match(mailformat)))
 {
   $("#validador_correo1").show();
 }
+
+  if(terminos1 == false){
+
+ 
+   $("#validador_terminos1").show();
+  }
       
   if(nombre1 == null || nombre1 == "") {
 
     $("#validador_nombre1").show();
   }
 
-  if(!(correo1.match(mailformat)) || (nombre1 == null || nombre1 == "") )
+  if(!(correo1.match(mailformat)) || (nombre1 == null || nombre1 == "") || (terminos1 == false) )
 
   {}
   else{
