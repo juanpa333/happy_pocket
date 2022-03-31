@@ -1,31 +1,52 @@
 <?php
-// Start with PHPMailer class
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
-require_once '../vendor/autoload.php';
-// create a new object
-$mail = new PHPMailer();
-// configure an SMTP
-$mail->isSMTP();
-$mail->Host = 'smtp.mailtrap.io';
-$mail->SMTPAuth = true;
-$mail->Username = '96c4b694dd0f22';
-$mail->Password = '0546543dcdab86';
-$mail->SMTPSecure = 'tls';
-$mail->Port = 2525;
-$mail->setFrom('eb27c9c1-a148-4fa4-bcae-2a8d4993d166@heroku.com', 'Your Hotel');
-$mail->addAddress('gomezjp@gmail.com', 'Me');
-$mail->Subject = 'Thanks for choosing Our Hotel!';
-// Set HTML
-$mail->isHTML(TRUE);
-$mail->Body = '<html>Hi there, we are happy to <br>confirm your booking.</br> Please check the document in the attachment.</html>';
-$mail->AltBody = 'Hi there, we are happy to confirm your booking. Please check the document in the attachment.';
-// add attachment
-$mail->addAttachment('//confirmations/yourbooking.pdf', 'yourbooking.pdf');
-// send the message
-if(!$mail->send()){
-    echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
-} else {
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+require '../php/Exception.php';
+require '../php/PHPMailer.php';
+require '../php/SMTP.php';
+
+//Load Composer's autoloader
+// require 'vendor/autoload.php';
+
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+try {
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'gomezjp@gmail.com';                     //SMTP username
+    $mail->Password   = '3rachismevalemo3';                               //SMTP password
+    $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //Recipients
+    $mail->setFrom('gomezjp@gmail.com', 'jp Happy Pocket');
+    $mail->addAddress('gomezjp@gmail.com','jp');     //Add a recipient
+   // $mail->addAddress('ellen@example.com');               //Name is optional
+    $mail->addReplyTo('gomezjp@gmail.com', 'Information');
+   // $mail->addCC('cc@example.com');
+ //   $mail->addBCC('bcc@example.com');
+
+    //Attachments
+  //  $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+   // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Here is the subject';
+    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
     echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 ?>
