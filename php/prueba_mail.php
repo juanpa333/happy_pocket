@@ -17,20 +17,21 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->SMTPDebug = 0; 
     $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->Host       = 'smtp.mailtrap.io';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'gomezjp@gmail.com';                     //SMTP username
-    $mail->Password   = '3rachismevalemo3';                               //SMTP password
+    $mail->Username   = 'd722647d24601d';                     //SMTP username
+    $mail->Password   = 'fdd4b78affc0a3';                               //SMTP password
     $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
-    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->Port       = 2525;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('gomezjp@gmail.com', 'jp Gmail');
+    $mail->setFrom('ed745ea8-86a3-4e57-87c8-f2de07516666@heroku.com', 'jp heroku mailtrap');
     $mail->addAddress('gomezjp@gmail.com','jp');     //Add a recipient
    // $mail->addAddress('ellen@example.com');               //Name is optional
-    $mail->addReplyTo('gomezjp@gmail.com', 'Information');
+    $mail->addReplyTo('ed745ea8-86a3-4e57-87c8-f2de07516666@heroku.com', 'Information');
    // $mail->addCC('cc@example.com');
  //   $mail->addBCC('bcc@example.com');
 
