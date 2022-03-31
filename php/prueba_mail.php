@@ -19,18 +19,18 @@ try {
     //Server settings
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->Host       = 'smtp.mailgun.org';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'gomezjp@gmail.com';                     //SMTP username
-    $mail->Password   = '3rachismevalemo3';                               //SMTP password
+    $mail->Username   = 'postmaster@sandbox580c1f8192464122951be35e369cf272.mailgun.org';                     //SMTP username
+    $mail->Password   = '5dc05bd92a4b2f5d2f9dbe0f5b42e4ba-62916a6c-d6fc3b93';                               //SMTP password
     $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('gomezjp@gmail.com', 'jp Happy Pocket');
+    $mail->setFrom('gomezjp@sandbox580c1f8192464122951be35e369cf272.mailgun.org', 'jp Heroku mailgun');
     $mail->addAddress('gomezjp@gmail.com','jp');     //Add a recipient
    // $mail->addAddress('ellen@example.com');               //Name is optional
-    $mail->addReplyTo('gomezjp@gmail.com', 'Information');
+    $mail->addReplyTo('postmaster@sandbox580c1f8192464122951be35e369cf272.mailgun.org', 'Information');
    // $mail->addCC('cc@example.com');
  //   $mail->addBCC('bcc@example.com');
 
