@@ -218,25 +218,25 @@ echo "</table>";
 
   <!-- FOOTER -->
   
-  <footer class="container  justify-content-center">
-    <div class="row shadow border  ">
+  <footer class="col justify-content-center my-3">
+    <div class="row shadow border" style="background-color: #0F0C47; ">
         <div class="col-3 col-md-2 my-3 ">
-          <img src="recursos/logo_solo_sin_leyenda.png" alt="happy_pocket_logo" class="img-fluid">
+          <img src="recursos/logo_solo_sin_leyenda.png" alt="happy_pocket_logo" class="img-fluid ms-5">
         </div>
-        <div class="col-md my-3 ">
-              <h5 class="text-center">
+        <div class="col-md my-3 ms-5 ">
+              <h5 class="text-center text-light">
                 Links importantes
               </h5>
-              <ul>
+              <ul class="ms-5">
                 <li><a href="politica-de-privacidad.html">Política de privacidad</a></li>
                 <li><a href="#">Política de cookies</a></li>
                </ul>
         </div>
         <div class="col-md my-3 ">
-           <h5 class="text-center">
+           <h5 class="text-center text-light">
              Contacto
            </h5>
-           <li><a href="mailto: info@happypocket.com.co">info@happypocket.com.co</a></li>
+           <li class="ms-5"><a href="mailto: info@happypocket.com.co">info@happypocket.com.co</a></li>
         </div>
     </div> 
     <div class="row  text-center align-content-center mt-3">
