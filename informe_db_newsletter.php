@@ -165,7 +165,8 @@ $password = "4upratos3";
 $dbname = "i7730950_wp2"; 
 
 echo "<table class='table table-dark table-hover' style='border: solid 1px black;'>";
-echo "<tr><th>Id</th><th>Nombre</th><th>e-mail</th><th>Fecha</th><th>Recurso</th></tr>";
+//echo "<tr><th>Id</th><th>Nombre</th><th>e-mail</th><th>Fecha</th><th>Recurso</th></tr>";
+echo "<tr><th>Nombre</th><th>e-mail</th><th>Fecha</th><th>Recurso</th></tr>";
 
 class TableRows extends RecursiveIteratorIterator {
   function __construct($it) {
@@ -190,7 +191,7 @@ class TableRows extends RecursiveIteratorIterator {
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $stmt = $conn->prepare("SELECT id, nombre, email, fecha, recurso FROM newsletter");
+  $stmt = $conn->prepare("SELECT nombre, email, fecha, recurso FROM newsletter");
   $stmt->execute();
 
   // set the resulting array to associative

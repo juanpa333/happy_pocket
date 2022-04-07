@@ -12,6 +12,91 @@
        $("#validador_terminos1").hide();
        $("#validador_terminos2").hide();
        $("#validador_terminos3").hide();
+       $("#validacion_nl_index_nombre").hide();
+       $("#validacion_nl_index_correo").hide();
+       $("#validacion_nl_index_tyc").hide();
+
+       $("#enviar_datos_nl_index").click(function(){
+        $("#validacion_nl_index_nombre").hide();
+        $("#validacion_nl_index_correo").hide();
+        $("#validacion_nl_index_tyc").hide();
+        $("#alerta_datos_exito").hide();
+      
+        let mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        let nombre1 = $("#entrada_nombre_nl_index").val();
+        let correo1 = $("#entrada_correo_nl_index").val();
+       let terminos1 = $("#flexCheckDefault").prop("checked");
+      
+        if(!(correo1.match(mailformat)))
+    {
+      $("#validacion_nl_index_correo").show();
+    }
+    
+      if(terminos1 == false){
+    
+     
+       $("#validacion_nl_index_tyc").show();
+      }
+          
+      if(nombre1 == null || nombre1 == "") {
+    
+        $("#validacion_nl_index_nombre").show();
+      }
+    
+      if(!(correo1.match(mailformat)) || (nombre1 == null || nombre1 == "") || (terminos1 == false) )
+    
+      {}
+      else{
+       
+        $("#etiqueta_acepto").after("<br><p id='alerta_datos_exito' class='text-primary fw-bold text-center fst-italic fs-3'>¡Datos enviados con éxito!</p>");
+      $("#link_recurso1_modal").fadeIn(1000);
+    
+      $.ajax({
+        // la URL para la petición
+        url : 'php/queries_db.php',
+     
+        // la información a enviar
+        // (también es posible utilizar una cadena de datos)
+        data : { 
+                 nombre : nombre1 ,
+                 email : correo1 ,
+                 recurso : 0
+                },
+     
+        // especifica si será una petición POST o GET
+        type : 'POST',
+     
+        // el tipo de información que se espera de respuesta
+        dataType : 'json',
+     
+        // código a ejecutar si la petición es satisfactoria;
+        // la respuesta es pasada como argumento a la función
+        success : function(json) {
+                    
+      
+        },
+     
+        // código a ejecutar si la petición falla;
+        // son pasados como argumentos a la función
+        // el objeto jqXHR (extensión de XMLHttpRequest), un texto con el estatus
+        // de la petición y un texto con la descripción del error que haya dado el servidor
+        error : function(jqXHR, status, error) {
+        // alert(error);
+        },
+     
+      //  código a ejecutar sin importar si la petición falló o no
+        complete : function(jqXHR, status) {
+           // alert('Petición realizada');
+           // alert(json.status);
+        }
+    })
+    
+    }
+        //$("#link_recurso1_modal").removeClass("d-none");
+       
+      
+      
+         });
       
    $("#boton_envio_datos").click(function(){
     $("#validador_correo1").hide();
