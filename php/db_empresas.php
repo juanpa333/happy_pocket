@@ -7,8 +7,10 @@ date_default_timezone_set("America/Bogota");
 $_fecha = date("d/m/Y h:i:s a");
 $_nombre = $_POST['nombre'];
 $_email = $_POST['email'];
-$_recurso = $_POST['recurso'];
+// $_recurso = $_POST['recurso'];
 $_empresas_servicio_interes = $_POST['empresas_servicio_interes'];
+$_celular = $_POST['celular'];
+$_comentarios = $_POST['comentarios'];
 
 
 
@@ -38,7 +40,7 @@ try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "INSERT INTO newsletter (nombre, recurso, email, fecha) VALUES ('$_nombre', '$_recurso','$_email', '$_fecha' )";
+    $sql = "INSERT INTO empresas (servicio_interes, nombre, correo,  celular, comentarios, fecha) VALUES ('$_empresas_servicio_interes','$_nombre', '$_email',  '$_celular' , '$_comentarios' , '$_fecha' )";
     // use exec() because no results are returned
     $conn->exec($sql);
     echo "New record created successfully";
