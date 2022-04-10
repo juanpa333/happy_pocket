@@ -219,30 +219,59 @@ echo "</table>";
 
   <!-- FOOTER -->
   
-  <footer class="justify-content-center my-4 ">
-    <div class="row shadow border " style="background-color: #0F0C47; height: 135px;">
-        <div class="col-2 col-md-2 my-3 ">
-          <img src="recursos/logo_solo_sin_leyenda.png" alt="happy_pocket_logo" class="img-fluid ms-2 h-50">
+  <footer class="justify-content-center my-4  " >
+  <!--   <footer class="d-flex align-items-center  " >-->
+
+    <div class="row shadow border " style="background-color: #0F0C47; height:fit-content; font-size:medium;">
+      <div class="col-3 d-sm-none"></div>
+        <div class=" col-6 col-md-2 my-3 align-content-center justify-content-center" >
+          <img src="recursos/logo_solo_sin_leyenda.png" alt="happy_pocket_logo" class="img-fluid ms-1 ">
         </div>
-        <div class="col col-md my-3 " style="">
-              <h5 class="text-center text-light" style="">
-                Links importantes
-              </h5>
+        <div class="col-7 col-md my-3 " >
+              <h6 class="text-center text-light" >
+                Happy Pocket
+              </h6>
               <ul class="">
+                <li><a href="conoceme.html">Conóceme</a></li>
                 <li><a href="politica-de-privacidad.html">Política de privacidad</a></li>
                 <li><a href="#">Política de cookies</a></li>
                </ul>
         </div>
-        <div class="col-5 col-md my-3 " style="">
-           <h5 class="text-center text-light">
+        <div class="col col-md my-3 " >
+          <h6 class="text-center text-light">
+            Servicios
+          </h6>
+          <ul class="">
+            <li><a href="personas.html">Personas</a></li>
+            <li><a href="empresas.html">Empresas</a></li>
+            
+           </ul>
+    </div>
+
+    <div class="col col-md my-3 " >
+      <h6 class="text-center text-light">
+        Aprende
+      </h6>
+      <ul class="">
+        <li><a href="conoceme.html">Planeación Financiera</a></li>
+        <li><a href="politica-de-privacidad.html">Consumidor Inteligente</a></li>
+        <li><a href="#">Deudor Inteligente</a></li>
+        <li><a href="#">Inversionista Inteligente</a></li>
+        <li><a href="#">Actualidad Económica y Financiera</a></li>
+        <li><a href="recursos.html">Recursos Gratis</a></li>
+       </ul>
+</div>
+        <div class="col-12 col-md my-3 " style="">
+           <h6 class="text-center text-light">
              Contacto
-           </h5>
-           <a href="mailto: info@happypocket.com.co">info@happypocket.com.co</a>
+           </h6>
+           <ul>
+             <li><a href="mailto: info@happypocket.com.co">info@happypocket.com.co</a></li>
+             <li><a href="https://wa.me/573017122660" target="_blank"><i class="bi bi-whatsapp  text-success fs-4"></i></a><a href="https://www.instagram.com/happypocketcolombia/" target="_blank"><i class="bi bi-instagram mx-2 fs-4 " style="color: indigo;"></i></a><a href="https://www.facebook.com/profile.php?id=100066714273743" target="_blank"><i class="bi bi-facebook me-2 fs-4"></i></a><a href="https://twitter.com/HappyPocketCol" target="_blank"><i class="bi bi-twitter me-2 fs-4"></i></a><a href="https://www.linkedin.com/company/happypocketcolombia/" target="_blank"><i class="bi bi-linkedin me-2 fs-4"></i></a></li>
+           </ul>
         </div>
     </div> 
-    <div class="row  text-center align-content-center mt-3">
-      <p class="fs-5">&copy Copyright Happy Pocket &bull; Todos los derechos reservados &bull; 2022</p>
-    </div>     
+       
   </footer>
   <!-- FOOTER -->
 

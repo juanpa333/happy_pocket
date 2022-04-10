@@ -41,6 +41,8 @@ try {
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "INSERT INTO empresas (servicio_interes, nombre, correo,  celular, comentarios, fecha) VALUES ('$_empresas_servicio_interes','$_nombre', '$_email',  '$_celular' , '$_comentarios' , '$_fecha' )";
+    // Ojo aqui con la insercion de los datos: debe ser en el orden de las columnas, asi se salte alguna
+    
     // use exec() because no results are returned
     $conn->exec($sql);
     echo "New record created successfully";
