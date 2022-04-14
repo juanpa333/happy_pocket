@@ -148,15 +148,21 @@
     <div class="row justify-content-center">
         <h2 class=" text-center d-md-none" style="color:#0a038f">PERSONAS</h2>
 
+     
+
+
         <div class="row">
-          <div class="col">
+          <div class="col-12 col-md-6">
             <p class="text-center fs-5">
               Muchas personas se esfuerzan cada día de la vida por ganar más dinero como si tener una fortuna fuera su meta y no el medio para lograr su propósito. En ocasiones en esa carrera por la riqueza olvidan lo fundamental, y terminan sin lograr lo que tanto anhelaban: su felicidad y la de sus seres queridos.        </p>
-          <p class="text-center fs-5 mb-5">
+          <p class="text-center fs-5 mb-2">
               Cuando las personas sincronizan sus metas con su realidad financiera, logran vivir más felices en el presente y sabiendo bien como quieren vivir en el futuro, aprenden a sacar el mayor provecho de cada peso que ganan. Mejora tu inteligencia financiera para que mejores tu bienestar financiero presente y futuro.        </p>
   
           </div>
-          <div class="col-3 img-fluid my-4 border shadow ">imagen</div>
+          <div class="col-10 col-md-6 my-4 ">
+            <div class="row d-none d-md-block" style="height:30px"></div>
+            <img src="recursos/finanzas_bombillo.png" style="height:60%;width:auto">
+            </div>
         </div>
     </div>
 
@@ -210,35 +216,44 @@
             <h5 class="">
                 Seleccione el servicio de su interés
             </h4>
-            <select class="form-select mb-3" aria-label="Default select example">
+            <select class="form-select mb-3" id="personas_servicio_interes" aria-label="Default select example">
                 
                 <option selected="1">Taller: Organiza tus finanzas</option>
-                <option value="2">Taller: ¿Dónde puedo invertir mi dinero?</option>
-                <option value="3">Acompañamiento: Consejería financiera</option>
+                <option >Taller: ¿Dónde puedo invertir mi dinero?</option>
+                <option >Acompañamiento: Consejería financiera</option>
                 
               </select>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label h5 ">Nombre completo*</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Escriba su nombre y apellidos completos">
+                <div class="mb-0">
+                    <label for="personas_nombre" class="form-label h5 ">Nombre completo*</label>
+                    <input type="text" class="form-control" id="personas_nombre" placeholder="Escriba su nombre y apellidos completos">
                 </div>
-                
+                <div class="p-2" id="validador_nombre_personas" style="color:red;">Ingrese un nombre válido</div>
+                <div class="mb-0">
+                    <label for="personas_correo" class="form-label h5 ">Correo electrónico*</label>
+                    <input type="email" class="form-control" id="personas_correo" placeholder="nombre@ejemplo.com">
+                </div>
+                <div class="p-2" id="validador_correo_personas" style="color:red;">Ingrese un correo válido</div>
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label h5 ">Correo electrónico*</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nombre@ejemplo.com">
+                    <label for="personas_celular" class="form-label h5 ">Teléfono celular*</label>
+                    <input type="text" class="form-control" id="personas_celular" placeholder="3XX-XXX-XX-XX">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label h5 ">Teléfono celular*</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="3XX-XXX-XX-XX">
+                    <label for="personas_comentarios" class="form-label h5">Comentarios</label>
+                    <textarea class="form-control" id="personas_comentarios" rows="3"></textarea>
                 </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label h5">Comentarios</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+                <div class="form-check ms-1 mb-2">
+                  <input class="form-check-input" type="checkbox" value="on" id="flexCheckChecked3">
+                  <label class="form-check-label" for="flexCheckChecked3">
+                    <a href="politica-de-privacidad.html" target="_blank">Acepto términos y condiciones</a> 
+                  </label>
+                 
                 </div>
 
                 <p>(*) Campos obligatorios</p>
 
-                <center><button type="button" class="btn btn-primary text-center" style="">Enviarme mayor información</button></center>
-    
+                <center><button id="boton_formulario_personas" type="button" class="btn btn-primary text-center" style="">Enviarme mayor información</button></center>
+                  <div id="alerta_datos_exito_personas" class="text-primary text-center mt-3 fs-3 fst-italic">¡Datos enviados con éxito!</div>
             </form>
         </div>
     <!--Temina formulario de temas de interés-->
@@ -266,9 +281,9 @@
       <div class="row shadow border " style="background-color: #0F0C47; height:fit-content; font-size:medium;">
         <div class="col-3 d-sm-none"></div>
           <div class=" col-6 col-md-2 my-3 align-content-center justify-content-center" >
-            <img src="recursos/logo_solo_sin_leyenda.png" alt="happy_pocket_logo" class="img-fluid ms-1 ">
+            <img src="recursos/logo_solo_sin_leyenda.png" alt="happy_pocket_logo" class="img-fluid ms-0 ms-md-4 ">
           </div>
-          <div class="col-7 col-md my-3 " >
+          <div class="col-7 col-md my-3  ms-md-3 " >
                 <h6 class="text-center text-light" >
                   Happy Pocket
                 </h6>
@@ -296,9 +311,9 @@
         <ul class="">
           <li><a href="conoceme.html">Planeación Financiera</a></li>
           <li><a href="politica-de-privacidad.html">Consumidor Inteligente</a></li>
-          <li><a href="#">Deudor Inteligente</a></li>
-          <li><a href="#">Inversionista Inteligente</a></li>
-          <li><a href="#">Actualidad Económica y Financiera</a></li>
+          <li><a href="blog.html">Deudor Inteligente</a></li>
+          <li><a href="blog.html">Inversionista Inteligente</a></li>
+          <li><a href="blog.html">Actualidad Económica y Financiera</a></li>
           <li><a href="recursos.html">Recursos Gratis</a></li>
          </ul>
   </div>

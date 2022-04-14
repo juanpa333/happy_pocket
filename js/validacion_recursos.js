@@ -19,6 +19,97 @@
        $("#validador_correo_empresas").hide();
        $("#alerta_datos_exito_empresas").hide();
 
+       $("#validador_nombre_personas").hide();
+       $("#validador_correo_personas").hide();
+       $("#alerta_datos_exito_personas").hide();
+
+
+
+       $("#boton_formulario_personas").click(function(){
+        $("#validador_nombre_personas").hide();
+        $("#validador_correo_personas").hide();
+        $("#alerta_datos_exito_personas").hide();
+        
+          let mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+          let nombre1 = $("#personas_nombre").val();
+          let correo1 = $("#personas_correo").val();
+          let personas_servicio_interes1 = $("#personas_servicio_interes").val();
+          let comentarios1 = $("#personas_comentarios").val();
+          let celular1 = $("#personas_celular").val();
+         
+          let terminos1 = $("#flexCheckDefault").prop("checked");
+        
+          if(!(correo1.match(mailformat)))
+      {
+        $("#validador_correo_personas").show();
+      }
+      
+        if(terminos1 == false){
+      
+       
+         $("#validacion_nl_index_tyc").show();
+        }
+            
+        if(nombre1 == null || nombre1 == "") {
+      
+          $("#validador_nombre_personas").show();
+        }
+      
+        if(!(correo1.match(mailformat)) || (nombre1 == null || nombre1 == "")  )
+      
+        {}
+        else{
+         $("#alerta_datos_exito_personas").show();
+         
+      
+        $.ajax({
+          // la URL para la petición
+          url : 'php/db_personas.php',
+       
+          // la información a enviar
+          // (también es posible utilizar una cadena de datos)
+          data : { 
+                  personas_servicio_interes : personas_servicio_interes1 ,
+                  nombre : nombre1 ,
+                  email : correo1 ,
+                  celular : celular1 ,
+                  comentarios : comentarios1
+                  },
+       
+          // especifica si será una petición POST o GET
+          type : 'POST',
+       
+          // el tipo de información que se espera de respuesta
+          dataType : 'json',
+       
+          // código a ejecutar si la petición es satisfactoria;
+          // la respuesta es pasada como argumento a la función
+          success : function(json) {
+                      
+        
+          },
+       
+          // código a ejecutar si la petición falla;
+          // son pasados como argumentos a la función
+          // el objeto jqXHR (extensión de XMLHttpRequest), un texto con el estatus
+          // de la petición y un texto con la descripción del error que haya dado el servidor
+          error : function(jqXHR, status, error) {
+          // alert(error);
+          },
+       
+        //  código a ejecutar sin importar si la petición falló o no
+          complete : function(jqXHR, status) {
+             // alert('Petición realizada');
+             // alert(json.status);
+          }
+      })
+      
+      }
+          //$("#link_recurso1_modal").removeClass("d-none");
+         
+        
+        
+           });
 
       $("#boton_formulario_empresas").click(function(){
       $("#validador_nombre_empresas").hide();
@@ -139,7 +230,7 @@
       {}
       else{
        
-        $("#etiqueta_acepto").after("<br><p id='alerta_datos_exito' class='text-primary fw-bold text-center fst-italic fs-3'>¡Datos enviados con éxito!</p>");
+        $("#etiqueta_acepto").after("<br><p id='alerta_datos_exito' class='text-primary  text-center fst-italic fs-5'>¡Datos enviados con éxito!<br>Gracias por suscribirte, bienvenid@ a Happy Pocket<br>Si no recibes tu correo, revisa tu carpeta de Spam</p>");
       $("#link_recurso1_modal").fadeIn(1000);
     
       $.ajax({
