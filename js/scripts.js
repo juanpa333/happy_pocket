@@ -65,7 +65,17 @@ $(document).ready(function(){
     });
   });
 
+  $(document).ready(function(){
+    $("#pildora6").mouseenter(function(){
+      $(this).css({"background-color": "darkblue", "color": "white"});
+    });
+  });
 
+  $(document).ready(function(){
+    $("#pildora6").mouseleave(function(){
+      $(this).css({"background-color": "white", "color": "darkblue"});
+    });
+  });
 
   /*
 
