@@ -24,7 +24,7 @@ $.ajax({
     // la respuesta es pasada como argumento a la función
     success : function(json) {
                 
-        $("#cuerpo_articulos").append(json.articulos);
+        $("#cuerpo_articulos").append(json.articulos_comprimidos);
        
     },
  

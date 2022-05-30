@@ -56,7 +56,7 @@ require "pildoras.php";
           Links a sitios y micrositios en la red, donde podrás acceder a material educativo para tus finanzas personales</p>
         <div class="row justify-content-end">
           <div class="col-3">
-        <a type="button" class="btn btn-primary mb-2 " href="educacion-financiera-gratuita.html">Ver más</a>
+        <a type="button" id="ver_mas_1" class="btn btn-primary mb-2 " href="educacion-financiera-gratuita.html">Ver más</a>
          </div>
        </div>
      </div>
@@ -74,7 +74,7 @@ require "pildoras.php";
           Un inversionista debe ser consciente de los retos que enfrenta al consumir información de medios digitales para tomar mejores decisiones de inversión. </p>
         <div class="row justify-content-end">
           <div class="col-3">
-        <a type="button" class="btn btn-primary mb-2 " href="retos-de-informacion-que-enfrenta-un-inversionista.html">Ver más</a>
+        <a type="button" id="ver_mas_7" class="btn btn-primary mb-2 " href="retos-de-informacion-que-enfrenta-un-inversionista.html">Ver más</a>
          </div>
        </div>
      </div>
@@ -92,7 +92,7 @@ require "pildoras.php";
           La desigualdad social se combate con educación financiera, porque reducirla con subsidios del Estado o gratuidad en algunos servicios públicos sólo perpetuará la cultura del dinero fácil.     </p>
         <div class="row justify-content-end">
           <div class="col-3">
-        <a type="button" class="btn btn-primary mb-2 " href="educacion-financiera-para-luchar-contra-la-desigualdad.html">Ver más</a>
+        <a type="button" id="ver_mas_1" class="btn btn-primary mb-2 " href="educacion-financiera-para-luchar-contra-la-desigualdad.html">Ver más</a>
          </div>
        </div>
      </div>
@@ -109,7 +109,7 @@ require "pildoras.php";
           Si cuando quieres mejorar tu condición física, piensas en ejercicio, dieta y entrenador, cuándo quieres mejorar tu condición financiera, ¿en qué herramientas piensas?        </p>
         <div class="row justify-content-end">
           <div class="col-3">
-        <a type="button" class="btn btn-primary mb-2"  href="mejora-tu-condicion-financiera-con-un-consejero-financiero.html">Ver más</a>
+        <a type="button" id="ver_mas_2" class="btn btn-primary mb-2"  href="mejora-tu-condicion-financiera-con-un-consejero-financiero.html">Ver más</a>
          </div>
        </div>
      </div>
@@ -126,7 +126,7 @@ require "pildoras.php";
         Libertad financiera no se trata de ser rico, famoso o poderoso, sino que se trata de tener la flexibilidad suficiente para aprovechar tu vida al máximo sin depender de un salario. Es contar con la estabilidad monetaria suficiente para dedicarte a lo que más valoras en la vida, sin preocuparte de como pagarás las cuentas. Para lograrla, basta con que sigas los siguientes pasos:       </p>
        <div class="row justify-content-end">
          <div class="col-3">
-       <a type="button" class="btn btn-primary mb-2 " href="pasos-para-tu-libertad-financiera.html">Ver más</a>
+       <a type="button" id="ver_mas_3" class="btn btn-primary mb-2 " href="pasos-para-tu-libertad-financiera.html">Ver más</a>
         </div>
       </div>
     </div>
@@ -142,7 +142,7 @@ require "pildoras.php";
         <p class="mx-3">
           Ahora te pagarán más intereses por un CDT, te cobrarán más intereses por un crédito bancario y tus fondos vista pueden presentar rentabilidades negativas.        <div class="row justify-content-end">
           <div class="col-3">
-        <a type="button" class="btn btn-primary mb-2 " href="como-afecta-mi-bolsillo-las-tasas-de-interes.html">Ver más</a>
+        <a type="button" id="ver_mas_4" class="btn btn-primary mb-2 " href="como-afecta-mi-bolsillo-las-tasas-de-interes.html">Ver más</a>
          </div>
        </div>
      </div>
@@ -159,7 +159,7 @@ require "pildoras.php";
           Comenzó la semana con la noticia que Evergrande, uno de los mayores desarrolladores inmobiliarios de China, no contaba con la liquidez suficiente para cumplir esta semana con el pago de intereses por US$83,5 millones de su deuda en bonos basura (high-yield) que asciende a US$300.000 millones, lo cual generó revuelo internacional hasta que el Banco de China informó que inyectaría recursos al sistema financiero para evitar un colapso por el default.        </p>
         <div class="row justify-content-end">
           <div class="col-3">
-        <a  type="button" class="btn btn-primary mb-2" href="entre-evergrande-y-la-fed.html">Ver más</a>
+        <a  type="button" id="ver_mas_5" class="btn btn-primary mb-2" href="entre-evergrande-y-la-fed.html">Ver más</a>
          </div>
        </div>
      </div>
@@ -176,7 +176,7 @@ require "pildoras.php";
           ¿Alguna vez escuchaste a tus abuelos decir que cuando eran jóvenes con un peso podían comprar una gaseosa y un pan que ahora costaría casi 2.000 pesos? ¿Te acuerdas cuando hace algunos años los billetes de mayor denominación eran los de $10.000 y $20.000 pesos y ahora los cajeros ya entregan billetes de $100.000 pesos? Todo esto, es producto de la inflación.        </p>
         <div class="row justify-content-end">
           <div class="col-3">
-        <a type="button" class="btn btn-primary mb-2 " href="cuidate-de-la-inflacion.html">Ver más</a>
+        <a type="button" id="ver_mas_6" class="btn btn-primary mb-2 " href="cuidate-de-la-inflacion.html">Ver más</a>
          </div>
        </div>
      </div>

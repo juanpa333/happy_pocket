@@ -39,18 +39,18 @@ mysqli_set_charset($conn, "utf8"); //muy necesario para tildes, eñes
 if($conn->connect_error) {
     die("Fallo conexion: " . $conn_error);
 }
-$sql = "SELECT id, entrada FROM blog";
+$sql = "SELECT id, entrada_comprimida FROM blog";
 $result = $conn->query($sql);
 
 
-$string_resultado="";
+$string_resultado=""; // Se inicializa el string
 if ($result->num_rows > 0){
     while($row = $result->fetch_assoc()) {
-        $string_resultado.=$row["entrada"];
+        $string_resultado.=$row["entrada_comprimida"]; // Se concatena el string con cada resultado de la DB
       }
 }
 //echo $string_resultado;
-$json = array("articulos"=>$string_resultado);
+$json = array("articulos_comprimidos"=>$string_resultado);
 
 echo json_encode($json);
  
