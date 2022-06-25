@@ -80,7 +80,7 @@ require "pildoras.php";
      </div>
 
 
-    <div class="col-md-6 mb-3 "  id="articulo_1">
+    <div class="col-md-6 mb-3 "  id="articulo_8">
       <center><img src="recursos/inequality.jpg" alt="" class="img-fluid mt-3 "></center>
        <p class="mx-3">
          1 - Abril - 2022
