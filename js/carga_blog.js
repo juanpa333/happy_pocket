@@ -44,3 +44,128 @@ $.ajax({
 })
 
 }) //End document ready function
+
+
+
+var tema
+
+$(document).ready(function(){
+
+$("#pildora1").click(function(){
+
+ 
+  $("#cuerpo_articulos").empty();
+  tema = "Planeación financiera"
+
+  $.post("php/carga_blog.php",
+{
+    
+    tema : tema, 
+   
+},
+function(json,status){
+  
+  $("#cuerpo_articulos").append(json.articulos_comprimidos);
+});
+
+})
+
+$("#pildora2").click(function(){
+
+  $("#cuerpo_articulos").empty();
+  tema = "Consumidor Inteligente"
+
+  $.post("php/carga_blog.php",
+{
+    
+    tema : tema, 
+   
+},
+function(json,status){
+  
+  $("#cuerpo_articulos").append(json.articulos_comprimidos);
+});
+
+})
+
+
+$("#pildora3").click(function(){
+
+  $("#cuerpo_articulos").empty();
+  tema = "Deudor Inteligente"
+
+  $.post("php/carga_blog.php",
+{
+    
+    tema : tema, 
+   
+},
+function(json,status){
+  
+  $("#cuerpo_articulos").append(json.articulos_comprimidos);
+});
+
+})
+
+$("#pildora4").click(function(){
+
+  $("#cuerpo_articulos").empty();
+  tema = "Inversionista Inteligente"
+
+  $.post("php/carga_blog.php",
+{
+    
+    tema : tema, 
+   
+},
+function(json,status){
+  
+  $("#cuerpo_articulos").append(json.articulos_comprimidos);
+});
+
+})
+
+$("#pildora5").click(function(){
+
+ 
+  $("#cuerpo_articulos").empty();
+  tema = "Actualidad Económica y Financiera"
+
+  $.post("php/carga_blog.php",
+{
+    
+    tema : tema, 
+   
+},
+function(json,status){
+  
+  $("#cuerpo_articulos").append(json.articulos_comprimidos);
+});
+
+})
+
+
+$("#pildora6").click(function(){
+
+  $("#cuerpo_articulos").empty();
+  tema = "Educación Financiera"
+
+  $.post("php/carga_blog.php",
+{
+    
+    tema : tema, 
+   
+},
+function(json,status){
+  
+  $("#cuerpo_articulos").append(json.articulos_comprimidos);
+});
+
+})
+
+
+
+
+
+
+})

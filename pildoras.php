@@ -38,25 +38,25 @@
     
   <div class="container d-none d-md-block mb-5 "  id="grupo_pildoras">
   <div class="row text-center  justify-content-center" style="color:darkblue;">
-    <a href="blog-planeacion-financiera.html" id="pildora1" class="col-auto rounded-pill border border-3   mx-3 fw-bold "  >
+    <p  id="pildora1" class="col-auto rounded-pill border border-3   mx-3 fw-bold "  >
       Planeación<br> Financiera
-    </a>
-    <a href="blog-consumidor-inteligente.html" id="pildora2" class="col-auto rounded-pill border border-3 mx-3 fw-bold ">
+</p>
+    <p  id="pildora2" class="col-auto rounded-pill border border-3 mx-3 fw-bold ">
       Consumidor<br> Inteligente
-    </a>
-    <a href="blog-deudor-inteligente.html" id="pildora3" class="col-auto rounded-pill border border-3 mx-3 fw-bold ">
+</p>
+    <p  id="pildora3" class="col-auto rounded-pill border border-3 mx-3 fw-bold ">
       Deudor<br> Inteligente
-    </a>
-    <a href="blog-inversionista-inteligente.html" id="pildora4" class="col-auto rounded-pill border border-3 mx-3 fw-bold "> Inversionista<br> Inteligente
+</p>
+    <p  id="pildora4" class="col-auto rounded-pill border border-3 mx-3 fw-bold "> Inversionista<br> Inteligente
      
-    </a>
-    <a href="blog-actualidad-economica-y-financiera.html" id="pildora5" class="col-auto rounded-pill border border-3 mx-3 fw-bold text-nowrap ">
+</p>
+    <p  id="pildora5" class="col-auto rounded-pill border border-3 mx-3 fw-bold text-nowrap ">
       Actualidad economica y <br>financiera
-    </a>
+</p>
 
-    <a href="blog-educacion-financiera.html" id="pildora6" class="col-auto rounded-pill border border-3 mx-3 fw-bold text-nowrap ">
+    <p  id="pildora6" class="col-auto rounded-pill border border-3 mx-3 fw-bold text-nowrap ">
       Educación <br>financiera
-    </a>
+</p>
   </div>
 </div>
 </div>

@@ -169,29 +169,33 @@
 
             
 
-	<div class="d-flex flex-row justify-content-around">
-  
-  <button id="boton_preview" class="btn btn-primary my-5 mx-2" type="submit">Preview</button><br>
+	<div class="row">
+    <div class="col">
+      <button id="boton_preview" class="btn btn-primary mt-4 mx-2" type="submit">Preview</button><br>
 
-        
-        <!--empieza check group-->
-      <div class="d-flex flex-column justify-content-center">
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1">
-              Default radio
-            </label>
-         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              Default checked radio
-            </label>
-        </div>
-      </div>  
-        <!--termina check group-->
+    </div>      
+            <!--empieza check group-->
+          <div class=" col-3  text-nowrap align-content-center mt-4 border" id="area_check_publicar">
+                <div class="form-check ">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="check_borrador" value="opcion_1" checked>
+                    <label class="form-check-label" for="check_borrador">
+                      Guardar Borrador / Despublicar
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="check_publicar" value="opcion_2" >
+                    <label class="form-check-label" for="check_publicar">
+                     Guardar y Publicar
+                    </label>
+                    
+                </div>
+                <!--termina check group-->
+          </div>  
+          
 
-  <button id="boton_guardar"  class="btn btn-warning my-5 mx-2" type="submit">Guardar y Publicar</button>
+     <div class="col-2 mt-4 ms-3 pt-2">
+     <button id="boton_guardar"  class="btn btn-warning  " type="submit">Enviar</button>
+     </div>
   
   
   </div>
@@ -215,23 +219,13 @@
         parrafo intro
       </p>
 
-        <div class=" d-flex justify-content-center mb-3">
-        <button type="button" class="btn btn-primary boton_ver_mas " data-id-entrada="">Ver Más</button>
-        </div>
+        
       <div id="cuerpo_principal_entrada">
             
       </div>
     <p class="d-flex flex-column flex-md-row gap-2" id="etiquetas_entrada"> <a href="educacion-financiera-gratuita.html">#etiqueta</a></p> <!--Etiquetas-->
     <!-- AddToAny BEGIN -->
-<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
- 
-  <a class="a2a_button_facebook"></a>
-  <a class="a2a_button_email"></a>
-  <a class="a2a_button_linkedin"></a>
-  <a class="a2a_button_whatsapp"></a>
-  </div>
-  <script async src="https://static.addtoany.com/menu/page.js"></script>
-  <!-- AddToAny END -->
+
 
       
     
@@ -262,7 +256,7 @@
           parrafo entrada comprimida </p>
         <div class="row justify-content-end">
           <div class="col-3">
-        <a type="button" id="boton_entrada_comprimida" class="btn btn-primary mb-2 " href="retos-de-informacion-que-enfrenta-un-inversionista.html" data-titulo="">Ver más</a>
+        <a type="button" id="boton_entrada_comprimida" class="btn btn-primary mb-2 " href="" data-titulo="">Ver más</a>
          </div>
        </div>
      </div>

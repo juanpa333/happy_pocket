@@ -46,7 +46,7 @@ $result = $conn->query($sql);
 $string_resultado=""; // Se inicializa el string
 if ($result->num_rows > 0){
     while($row = $result->fetch_assoc()) {
-        $string_resultado.=$row["entrada_comprimida"]; // Se concatena el string con cada resultado de la DB
+        $string_resultado.=$row["entrada_completa"]; // Se concatena el string con cada resultado de la DB
       }
 }
 //echo $string_resultado;

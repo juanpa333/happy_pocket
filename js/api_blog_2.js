@@ -22,34 +22,58 @@
                 var entrada_completa
                 var titulo_seleccionado
                 var texto_editor_html
-               
-                
+                var estado
+                var href_entrada
+                var preview_entrada
 
 
        
           $(document).ready(function(){
+
+            preview_entrada = $("#preview_entrada").html()
               
               $("#texto_editor_preview").hide()
               $("#texto_editor_html").hide()
 
 
               $("#boton_preview").click(function(){
+                $("#preview_entrada").empty()
+                $("#preview_entrada").prepend(preview_entrada)
              texto_editor_html = CKEDITOR.instances['editor1'].getData(); // Esta linea guarda el objeto que está en el editor
-            
+           /*  $("#titulo_entrada").text("")
+             $("#titulo_entrada_comprimida").text("")
+             $("[data-titulo]").attr("data-titulo", "")
+             $("#boton_entrada_comprimida").attr("href", "")
+             $("#fecha_entrada").text("");
+             $("#fecha_entrada_comprimida").text("");
+             $("#tema_entrada").text("");
+             $("#autor_entrada").text("");
+             $("#etiquetas_entrada").text("");
+             $("#imagen_entrada").attr("src", "");
+             $("#imagen_entrada_comprimida").attr("src", "");
+             $("#parrafo_intro_entrada").text("");
+             $("#parrafo_entrada_comprimida").text("");
+             $("#parrafo_intro_entrada").text("")
+             // $("#cuerpo_principal_entrada").empty();
+            // $("#cuerpo_principal_entrada").prepend($("#conjunto_parrafos_preview").html());
            
+            */
 
              titulo_seleccionado = $("#opciones_titulo").val()
           //  $("#texto_editor_html").text(texto_editor_html);
+          $("#texto_editor_preview").empty()
             $("#texto_editor_preview").prepend(texto_editor_html);
 
              titulo = $("#Input_titulo").val()
-                console.log("titulo : " + titulo)
+             //   console.log("titulo : " + titulo)
                 $("#titulo_entrada").text(titulo)
                 $("#titulo_entrada_comprimida").text(titulo)
                 $("[data-titulo]").attr("data-titulo", titulo)
+                href_entrada = "blog_dinamico.php?titulo=" + titulo 
+                $("#boton_entrada_comprimida").attr("href", href_entrada)
 
-                 input_fecha = $("#Input_fecha").val();
-               console.log("input_fecha :" + input_fecha);
+                input_fecha = $("#Input_fecha").val();
+                console.log("input_fecha :" + input_fecha);
 
                 const fecha = new Date($("#Input_fecha").val());
                 console.log("Fecha to datestring : " + fecha.toDateString());
@@ -144,8 +168,9 @@
                $("body").append("<div id='preview_editor_carga'></div>")
                //  $("#preview_editor_carga").hide()
 
-                 console.log($("#preview_editor_carga").html())
-         
+                 console.log("Preview editor de carga: " + $("#preview_editor_carga").html())
+                
+                console.log("Entrada completa: " + entrada_completa)
      
                 });
               });
@@ -202,6 +227,8 @@
             
                     $("#boton_refresca_titulos").click(function(){
                       $("#opciones_titulo").load("php/carga_titulos_entradas.php")
+
+                      $("#boton_limpiar").click()
                         })
     
                       });
@@ -284,6 +311,17 @@
 
             $(document).ready(function(){
               $("#boton_guardar").click(function(){
+
+             //   $("#boton_preview").click()
+                
+                if ($("#check_borrador").prop("checked") == true) {
+
+                  estado = "Borrador"
+
+                } else { estado = "Publicada"}
+
+
+
                 $.post("php/ingreso_entradas_blog.php",
                 {
                     id : $("#Input_id").attr("value") , 
@@ -294,7 +332,8 @@
                     etiquetas : etiquetas,
                     entrada_comprimida : string_preview_comprimido_html, 
                     entrada_completa : entrada_completa, 
-                    texto_editor_html : texto_editor_html
+                    texto_editor_html : texto_editor_html,
+                    estado : estado
                     
                     
                   
@@ -328,7 +367,22 @@
                   $("#Input_etiquetas").val(data.etiquetas)
                   console.log("fecha recuperada de la DB:" +  data.fecha)
                   $(data.entrada_completa).remove("img")
+                  if (data.estado == "Borrador") {
+                    $("#estado_entrada").removeClass("bg-danger")
+                  $("#estado_entrada").removeClass("bg-success")
+                  $("#estado_entrada").addClass("bg-danger")
+                    
+                  }
 
+                  if (data.estado == "Publicada") {
+                    $("#estado_entrada").removeClass("bg-danger")
+                  $("#estado_entrada").removeClass("bg-success")
+                  $("#estado_entrada").addClass("bg-success")
+                    
+                  }
+
+
+                  $("#estado_entrada").attr("value", data.estado)
                 
                  
 
@@ -348,6 +402,11 @@
                 $("#Input_autor").val("")
                 $("#Input_etiquetas").val("")
                 CKEDITOR.instances['editor1'].setData("");
+                $("#estado_entrada").removeClass("bg-danger")
+                $("#estado_entrada").removeClass("bg-success")
+                $("#estado_entrada").addClass("bg-secondary")
+                $("#estado_entrada").attr("value","----")
+
 
               
               
@@ -368,5 +427,16 @@
                 function(data,status){
                  
                 });
+              });
+            });  
+
+
+
+            $(document).ready(function(){
+              $("body").click(function(){
+
+                console.log("Check_borrador: " + $("#check_borrador").prop("checked"))
+                console.log("Check_publicar: " + $("#check_publicar").prop("checked"))
+
               });
             });  

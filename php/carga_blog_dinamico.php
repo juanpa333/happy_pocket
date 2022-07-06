@@ -20,13 +20,14 @@ if($conn->connect_error) {
     die("Fallo conexion: " . $conn_error);
 }
 
+
 if(isset($_POST['tema'])){
-  $_tema = $_POST['tema'];
-  $sql = "SELECT id, entrada_comprimida, estado FROM blog WHERE tema = '$_tema' ORDER by fecha ";
+    $_tema = $_POST['tema'];
+    $sql = "SELECT id, entrada_comprimida, estado FROM blog WHERE tema = '$_tema' ORDER by fecha ";
+  
+  }
 
-} else {$sql = "SELECT id, entrada_comprimida, estado FROM blog ORDER by fecha";}
-
-$result = $conn->query($sql);
+  $result = $conn->query($sql);
 
 
 $string_entradas_comprimidas=""; // Se inicializa el string
@@ -47,4 +48,6 @@ echo json_encode($json);
 
   
   $conn = null;
+
+
 ?>
