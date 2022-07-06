@@ -44,7 +44,7 @@
               </li>
              
                <li class="nav-item mx-4 ">
-                <a class="nav-link text-light fs-5 mx-2" href="blog.html">Blog</a>
+                <a class="nav-link text-light fs-5 mx-2" href="blog_dinamico.php">Blog</a>
               </li>
                <li class="nav-item mx-4 ">
                 <a class="nav-link text-light fs-5 mx-2" href="recursos.html">Recursos GRATIS</a>

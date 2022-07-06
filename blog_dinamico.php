@@ -116,6 +116,8 @@ require "pildoras.php";
 
                
                 if(isset($_GET['titulo'])){
+                  echo '<script>$("#entradas_comprimidas").hide()</script>';
+                  echo '<script>$("#entradas_por_tema").hide()</script>';
                 echo '<script>$("#entrada_seleccionada").show()</script>';
                  echo $string_resultado;
                  unset($_GET['titulo']);

@@ -5,7 +5,7 @@
 $(document).ready(function(){
 
     $("#pildora1").click(function(){
-    
+     
      
       $.post("php/carga_blog_dinamico.php",
     {
@@ -14,6 +14,7 @@ $(document).ready(function(){
        
     },
     function(json,status){
+      $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
         $("#entradas_por_tema_seccion_interna").empty()
       $("#entradas_por_tema_seccion_interna").append(json.articulos_comprimidos)
@@ -34,6 +35,7 @@ $(document).ready(function(){
        
     },
     function(json,status){
+      $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
         $("#entradas_por_tema_seccion_interna").empty()
       $("#entradas_por_tema_seccion_interna").append(json.articulos_comprimidos)
@@ -54,6 +56,7 @@ $(document).ready(function(){
        
     },
     function(json,status){
+      $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
         $("#entradas_por_tema_seccion_interna").empty()
       $("#entradas_por_tema_seccion_interna").append(json.articulos_comprimidos)
@@ -73,6 +76,7 @@ $(document).ready(function(){
        
     },
     function(json,status){
+      $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
         $("#entradas_por_tema_seccion_interna").empty()
       $("#entradas_por_tema_seccion_interna").append(json.articulos_comprimidos)
@@ -94,6 +98,7 @@ $(document).ready(function(){
        
     },
     function(json,status){
+      $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
         $("#entradas_por_tema_seccion_interna").empty()
       $("#entradas_por_tema_seccion_interna").append(json.articulos_comprimidos)
@@ -114,6 +119,7 @@ $(document).ready(function(){
        
     },
     function(json,status){
+      $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
         $("#entradas_por_tema_seccion_interna").empty()
       $("#entradas_por_tema_seccion_interna").append(json.articulos_comprimidos)
