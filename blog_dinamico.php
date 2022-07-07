@@ -89,15 +89,26 @@ require "pildoras.php";
    
   </div>
 
-<div id="entradas_por_tema" class="border">
-  <div >
-    <div class="row">
-      <div class="col-1"></div>
-      <div class="col" id="entradas_por_tema_seccion_interna">Entradas por tema</div>
-      <div class="col-1"></div>
-    </div>
+
+  <div class="container mb-5">
+ 
+          <div id="entradas_por_tema" class="border">
+  
+                <span class="row justify-content-center text-align border" id="entradas_por_tema_seccion_interna">Entradas por tema</span>
+         </div>
+   
   </div>
-</div>
+  
+  <div class="container mb-5">
+ 
+      <div id="entrada_palabras_clave" class="border">
+
+            <span class="row justify-content-center text-align border" id="entrada_palabras_clave_seccion_interna">Entradas por palabras clave</span>
+      
+      </div>
+
+  </div>
+
 
 <div id="entrada_seleccionada" class="border">
   <div >
@@ -110,6 +121,7 @@ require "pildoras.php";
                 if(isset($_GET['titulo'])){
                   echo '<script>$("#entradas_comprimidas").hide()</script>';
                   echo '<script>$("#entradas_por_tema").hide()</script>';
+                  echo '<script>$("#entrada_palabras_clave").hide()</script>';
                   echo '<script>$("#entrada_seleccionada").show()</script>';
                   echo $string_resultado;
                   unset($_GET['titulo']);
@@ -124,13 +136,9 @@ require "pildoras.php";
 </div>
  
 
-<div id="entrada_palabras_clave">
-  <div id="entrada_palabras_clave_seccion_interna">
-    <div class="row">
-      <div class="col"></div>
-    </div>
-  </div>
-</div>
+
+
+
 
 
 

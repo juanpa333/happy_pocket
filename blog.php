@@ -45,20 +45,20 @@ require "pildoras.php";
   <div class="row justify-content-center text-align">
 
     <div class="col-md-6 mb-3 "  id="articulo_1">
-      <center><img src="recursos/financial-education.png" alt="" class="img-fluid mt-3 "></center>
-       <p class="mx-3">
-         2 - Mayo - 2022
-       </p>
-       <h3 class="mx-3" >
-         EDUCACIÓN FINANCIERA GRATUITA
-       </h3>
-        <p class="mx-3">
-          Links a sitios y micrositios en la red, donde podrás acceder a material educativo para tus finanzas personales</p>
-        <div class="row justify-content-end">
-          <div class="col-3">
-        <a type="button" id="ver_mas_1" class="btn btn-primary mb-2 " href="educacion-financiera-gratuita.html">Ver más</a>
-         </div>
-       </div>
+        <center><img src="recursos/financial-education.png" alt="" class="img-fluid mt-3 "></center>
+            <p class="mx-3">
+              2 - Mayo - 2022
+            </p>
+            <h3 class="mx-3" >
+              EDUCACIÓN FINANCIERA GRATUITA
+            </h3>
+            <p class="mx-3">
+              Links a sitios y micrositios en la red, donde podrás acceder a material educativo para tus finanzas personales</p>
+            <div class="row justify-content-end">
+                <div class="col-3">
+                    <a type="button" id="ver_mas_1" class="btn btn-primary mb-2 " href="educacion-financiera-gratuita.html">Ver más</a>
+                </div>
+            </div>
      </div>
 
     

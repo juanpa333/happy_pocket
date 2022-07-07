@@ -157,8 +157,9 @@ console.log(window.location.href)
   function(json,status){
     $("#entradas_comprimidas").show()
     $("#entradas_por_tema").hide()
+    $("#entrada_palabras_clave").hide()
     $("#entrada_seleccionada").hide()
-      $("#entradas_comprimidas_seccion_interna").empty()
+    $("#entradas_comprimidas_seccion_interna").empty()
     $("#entradas_comprimidas_seccion_interna").append(json.articulos_comprimidos)
   });
 }
