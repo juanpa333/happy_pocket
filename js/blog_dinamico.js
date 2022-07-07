@@ -10,10 +10,11 @@ $(document).ready(function(){
       $.post("php/carga_blog_dinamico.php",
     {
         
-        tema : "Planeación financiera", 
+        tema : "Planeación financiera"
        
     },
     function(json,status){
+      $("#entradas_comprimidas").hide()
       $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
         $("#entradas_por_tema_seccion_interna").empty()
@@ -31,10 +32,11 @@ $(document).ready(function(){
       $.post("php/carga_blog_dinamico.php",
     {
         
-        tema : "Consumidor Inteligente", 
+        tema : "Consumidor Inteligente" 
        
     },
     function(json,status){
+      $("#entradas_comprimidas").hide()
       $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
         $("#entradas_por_tema_seccion_interna").empty()
@@ -52,10 +54,11 @@ $(document).ready(function(){
       $.post("php/carga_blog_dinamico.php",
     {
         
-        tema : "Deudor Inteligente", 
+        tema : "Deudor Inteligente" 
        
     },
     function(json,status){
+      $("#entradas_comprimidas").hide()
       $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
         $("#entradas_por_tema_seccion_interna").empty()
@@ -72,10 +75,11 @@ $(document).ready(function(){
       $.post("php/carga_blog_dinamico.php",
     {
         
-        tema : "Inversionista Inteligente", 
+        tema : "Inversionista Inteligente" 
        
     },
     function(json,status){
+      $("#entradas_comprimidas").hide()
       $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
         $("#entradas_por_tema_seccion_interna").empty()
@@ -94,10 +98,11 @@ $(document).ready(function(){
       $.post("php/carga_blog_dinamico.php",
     {
         
-        tema : "Actualidad Económica y Financiera", 
+        tema : "Actualidad Económica y Financiera" 
        
     },
     function(json,status){
+      $("#entradas_comprimidas").hide()
       $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
         $("#entradas_por_tema_seccion_interna").empty()
@@ -115,10 +120,11 @@ $(document).ready(function(){
       $.post("php/carga_blog_dinamico.php",
     {
         
-        tema : "Educación Financiera", 
+        tema : "Educación Financiera" 
        
     },
     function(json,status){
+      $("#entradas_comprimidas").hide()
       $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
         $("#entradas_por_tema_seccion_interna").empty()
@@ -136,6 +142,29 @@ $(document).ready(function(){
     
     })
 })
+
+
+$(document).ready(function(){
+
+console.log(window.location.href) 
+       if(window.location.href == 'http://localhost/jp/happy_pocket/blog_dinamico.php'){
+  $.post("php/carga_blog_dinamico.php",
+  {
+      
+      todo : "todo"
+     
+  },
+  function(json,status){
+    $("#entradas_comprimidas").show()
+    $("#entradas_por_tema").hide()
+    $("#entrada_seleccionada").hide()
+      $("#entradas_comprimidas_seccion_interna").empty()
+    $("#entradas_comprimidas_seccion_interna").append(json.articulos_comprimidos)
+  });
+}
+  })
+
+
 
 
 

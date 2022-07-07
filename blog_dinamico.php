@@ -1,7 +1,6 @@
 <?php
  date_default_timezone_set("America/Bogota");
- //header("Content-Type: application/json;charset=utf-8"); //Muy necesario para tildes, eñes
-
+ 
 if(isset($_GET['titulo'])){
   $_titulo = $_GET['titulo'];
 }
@@ -26,10 +25,7 @@ if ($result->num_rows > 0){
         $string_resultado.=$row["entrada_completa"]; // Se concatena el string con cada resultado de la DB
       }
 }
-//echo $string_resultado;
-//$json = array("articulos_comprimidos"=>$string_resultado);
 
-//echo json_encode($json);
  
 ?>
 
@@ -81,21 +77,17 @@ require "pildoras.php";
 <!--Empiezan Artículos del blog-->
 
 
+
+  
+ 
 <div class="container mb-5">
-  <div id="cuerpo_articulos" class="row justify-content-center text-align">
- </div>
-</div>
-
-
-<div id="entradas_comprimidas" class="border">
-  <div >
-    <div class="row">
-      <div class="col-1"></div>
-      <div class="col" id="entradas_comprimidas_seccion_interna">Entradas comprimidas</div>
-      <div class="col-1"></div>
-    </div>
+ 
+          <div id="entradas_comprimidas" class="">
+  
+                <span class="row justify-content-center text-align border" id="entradas_comprimidas_seccion_interna">Entradas comprimidas</span>
+         </div>
+   
   </div>
-</div>
 
 <div id="entradas_por_tema" class="border">
   <div >
@@ -118,14 +110,11 @@ require "pildoras.php";
                 if(isset($_GET['titulo'])){
                   echo '<script>$("#entradas_comprimidas").hide()</script>';
                   echo '<script>$("#entradas_por_tema").hide()</script>';
-                echo '<script>$("#entrada_seleccionada").show()</script>';
-                 echo $string_resultado;
-                 unset($_GET['titulo']);
+                  echo '<script>$("#entrada_seleccionada").show()</script>';
+                  echo $string_resultado;
+                  unset($_GET['titulo']);
                 }
 
-               
-               // echo "<br>hola desde php <br><br>";
-               // echo '<script>$("body").click(function(){$("#entradas_por_tema").toggle()})</script>';
               ?>
               Entrada Seleccionada
             </div>

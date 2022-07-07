@@ -24,9 +24,20 @@ if($conn->connect_error) {
 if(isset($_POST['tema'])){
     $_tema = $_POST['tema'];
     $sql = "SELECT id, entrada_comprimida, estado FROM blog WHERE tema = '$_tema' ORDER by fecha ";
-  
+    unset($_POST['tema']);
+    
   }
 
+
+  if(isset($_POST['todo'])){
+    $sql = "SELECT id, entrada_comprimida, estado FROM blog ORDER by fecha ";
+    unset($_POST['todo']);
+    
+  }
+
+
+
+  
   $result = $conn->query($sql);
 
 
