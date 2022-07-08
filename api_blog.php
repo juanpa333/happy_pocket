@@ -156,12 +156,17 @@
               <label for="floatingPassword">Etiquetas</label>
               
            </div>
-           
+              
+              <div class="d-flex flex-row gap-2">
+                    <button id="boton_agregar_etiqueta" class="btn btn-primary">Agregar etiqueta</button>
+                    <button id="boton_limpiar_etiquetas" class="btn btn-primary">Limpiar etiquetas</button>
+                </div>
+
             </div>
-              <div id="etiquetas"></div>
-            </div>
+
+            <div id="etiquetas"></div>
             
-            <p class="fw-bold ">Aquí podrá ingresar la imagen principal de la entrada y el texto principal</p>
+            <p class="fw-bold mt-5">Aquí podrá ingresar la imagen principal de la entrada y el texto principal</p>
                        
             <textarea  class="my-5" name="" id="editor1" cols="" rows=""></textarea>
             </div>
@@ -213,7 +218,7 @@
       <div class="caja_fecha_completa_entrada ">
       <p class="fst-italic fs-6" >Creado el <span id="fecha_entrada"> -- de ---------- de ---- </span></p> <!--Fecha-->
       </div>
-      <p class="fst-italic fs-6">por: <span id="autor_entrada"></span></p>
+      <p class="fst-italic fs-6">Por: <span id="autor_entrada"></span></p>
 
       <p class="fw-bold" id="parrafo_intro_entrada"> <!--Parrafo introductorio (Que se ve en el mosaico)--->
         parrafo intro
@@ -223,7 +228,7 @@
       <div id="cuerpo_principal_entrada">
             
       </div>
-    <p class="d-flex flex-column flex-md-row gap-2" id="etiquetas_entrada"> <a href="educacion-financiera-gratuita.html">#etiqueta</a></p> <!--Etiquetas-->
+    <p class="d-flex flex-column flex-md-row gap-2" id="etiquetas_entrada"></p> <!--Etiquetas-->
     <!-- AddToAny BEGIN -->
 
 
@@ -232,10 +237,10 @@
     </div>
   </div>
   </div>
- <h1 class="">Texto Editor Preview</h1>
+ <h1 class="d-none">Texto Editor Preview</h1>
   <div id="texto_editor_preview"></div>
   
-  <h1 class="">Texto editor html</h1>
+  <h1 class="d-none">Texto editor html</h1>
   <div id="texto_editor_html" class="border"></div>
   
   <h3 class="text-danger my-3">Preview Entrada Comprimida</h3><hr>

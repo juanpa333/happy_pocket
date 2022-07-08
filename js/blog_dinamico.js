@@ -14,6 +14,7 @@ $(document).ready(function(){
        
     },
     function(json,status){
+      $("#entrada_palabras_clave").hide()
       $("#entradas_comprimidas").hide()
       $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
@@ -36,6 +37,7 @@ $(document).ready(function(){
        
     },
     function(json,status){
+      $("#entrada_palabras_clave").hide()
       $("#entradas_comprimidas").hide()
       $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
@@ -58,6 +60,7 @@ $(document).ready(function(){
        
     },
     function(json,status){
+      $("#entrada_palabras_clave").hide()
       $("#entradas_comprimidas").hide()
       $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
@@ -79,6 +82,7 @@ $(document).ready(function(){
        
     },
     function(json,status){
+      $("#entrada_palabras_clave").hide()
       $("#entradas_comprimidas").hide()
       $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
@@ -102,6 +106,7 @@ $(document).ready(function(){
        
     },
     function(json,status){
+      $("#entrada_palabras_clave").hide()
       $("#entradas_comprimidas").hide()
       $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
@@ -124,6 +129,7 @@ $(document).ready(function(){
        
     },
     function(json,status){
+      $("#entrada_palabras_clave").hide()
       $("#entradas_comprimidas").hide()
       $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
@@ -135,13 +141,7 @@ $(document).ready(function(){
 })
 
 
-$(document).ready(function(){
 
-    $("#boton_entrada_comprimida").click(function(){
-    alert("hola")
-    
-    })
-})
 
 
 $(document).ready(function(){

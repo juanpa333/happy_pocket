@@ -120,9 +120,9 @@
                 $("#autor_entrada").text(" " + autor);
 
             
-             etiquetas = $("#Input_etiquetas").val();
+             etiquetas = $("#etiquetas").html();
                 console.log("Etiquetas: " + etiquetas);
-                $("#etiquetas_entrada").text(etiquetas);
+                $("#etiquetas_entrada").html(etiquetas);
 
             var url_img = $(texto_editor_html).find("img").attr("src");
                
@@ -352,6 +352,7 @@
 
             $(document).ready(function(){
               $("#boton_cargar").click(function(){
+                $("#etiquetas").empty()
                 $.post("php/carga_entradas_edicion.php",
                 {
                     titulo_seleccionado : $("#opciones_titulo").val()
@@ -364,7 +365,7 @@
                   $("#Input_fecha").val(data.fecha)
                   $("#Input_autor").val(data.autor)
                   $("#selec_temas_blog").val(data.tema)
-                  $("#Input_etiquetas").val(data.etiquetas)
+                  $("#etiquetas").prepend(data.etiquetas)
                   console.log("fecha recuperada de la DB:" +  data.fecha)
                   $(data.entrada_completa).remove("img")
                   if (data.estado == "Borrador") {
@@ -406,6 +407,7 @@
                 $("#estado_entrada").removeClass("bg-success")
                 $("#estado_entrada").addClass("bg-secondary")
                 $("#estado_entrada").attr("value","----")
+                $("#etiquetas").empty()
 
 
               
@@ -433,10 +435,48 @@
 
 
             $(document).ready(function(){
-              $("body").click(function(){
+              $("").click(function(){
 
                 console.log("Check_borrador: " + $("#check_borrador").prop("checked"))
                 console.log("Check_publicar: " + $("#check_publicar").prop("checked"))
 
               });
             });  
+
+
+            $(document).ready(function(){
+              $("#boton_agregar_etiqueta").click(function(){
+
+
+                var etiqueta_html = ""
+                etiqueta_html = $("#Input_etiquetas").val()
+                etiqueta_html = "| <a class='clase_etiqueta'  id='' href='blog_dinamico.php?etiqueta=" + etiqueta_html + "'" + " >" + etiqueta_html + "</a>  "
+                $("#etiquetas").append(etiqueta_html)
+                $("#Input_etiquetas").val("")
+              });
+
+
+
+
+              $("#clase_etiqueta").click(function(){
+
+                console.log("click en etiqueta")
+             //  console.log($(this).text())
+              });
+
+
+
+
+            });  
+
+
+            $(document).ready(function(){
+              $("#boton_limpiar_etiquetas").click(function(){
+
+                $("#etiquetas").empty()
+                $("#Input_etiquetas").val("")
+              });
+            });  
+
+
+           

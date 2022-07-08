@@ -1,9 +1,5 @@
 <?php
  date_default_timezone_set("America/Bogota");
- 
-if(isset($_GET['titulo'])){
-  $_titulo = $_GET['titulo'];
-}
 
  $servername = "173.201.185.75";  // Host del servidor donde está alojada la base de datos
  $username = "gomezjp"; // Usuario creado en la base de datos del servidor
@@ -15,16 +11,46 @@ mysqli_set_charset($conn, "utf8"); //muy necesario para tildes, eñes
 if($conn->connect_error) {
     die("Fallo conexion: " . $conn_error);
 }
-$sql = "SELECT id, entrada_completa FROM blog WHERE titulo = '$_titulo'";
-$result = $conn->query($sql);
+ 
+if(isset($_GET['titulo'])){
+  $_titulo = $_GET['titulo'];
+  $sql = "SELECT id, entrada_completa FROM blog WHERE titulo = '$_titulo'";
+  $result = $conn->query($sql);
 
-
-$string_resultado=""; // Se inicializa el string
+  $string_resultado=""; // Se inicializa el string
 if ($result->num_rows > 0){
     while($row = $result->fetch_assoc()) {
         $string_resultado.=$row["entrada_completa"]; // Se concatena el string con cada resultado de la DB
       }
 }
+}
+
+if(isset($_GET['etiqueta'])){
+ 
+  $_etiqueta = $_GET['etiqueta'];
+ // $sql = "SELECT id, entrada_comprimida FROM blog WHERE etiquetas LIKE '$_etiqueta'";
+ $sql = "SELECT id, entrada_comprimida, etiquetas FROM blog";
+  $result = $conn->query($sql);
+
+  $string_resultado=""; // Se inicializa el string
+if ($result->num_rows > 0){
+    while($row = $result->fetch_assoc()) {
+      $str = $row["etiquetas"];
+      $pattern = "/".$_etiqueta."/i";
+        if((preg_match($pattern, $str)) == 1){
+        $string_resultado.=$row["entrada_comprimida"]; // Se concatena el string con cada resultado de la DB
+      }
+    }
+}
+}
+
+ 
+// $sql = "SELECT id, entrada_completa FROM blog WHERE titulo = '$_titulo'";
+// $result = $conn->query($sql);
+
+
+
+
 
  
 ?>
@@ -103,7 +129,26 @@ require "pildoras.php";
  
       <div id="entrada_palabras_clave" class="border">
 
-            <span class="row justify-content-center text-align border" id="entrada_palabras_clave_seccion_interna">Entradas por palabras clave</span>
+            <span class="row justify-content-center text-align border" id="entrada_palabras_clave_seccion_interna">
+              
+            <?php
+
+               
+                if(isset($_GET['etiqueta'])){
+                  echo '<script>$("#entradas_comprimidas").hide()</script>';
+                  echo '<script>$("#entradas_por_tema").hide()</script>';
+                 // echo '<script>$("#entrada_palabras_clave").hide()</script>';
+                  echo '<script>$("#entrada_seleccionada").hide()</script>';
+                echo '<script>$("#entrada_palabras_clave").show()</script>';
+                  echo $string_resultado;
+                  unset($_GET['etiqueta']);
+                }
+
+              ?>
+            
+            Entradas por palabras clave
+          
+            </span>
       
       </div>
 
