@@ -179,6 +179,8 @@
                 console.log("Entrada completa: " + entrada_completa)
 
                 html_featurette = $("#featurette").html()
+                $("#featurette").empty()
+                $("#featurette").prepend(html_featurette)
 
                 console.log("html featurette: " + html_featurette)
                 });
@@ -321,7 +323,7 @@
             $(document).ready(function(){
               $("#boton_guardar").click(function(){
 
-             //   $("#boton_preview").click()
+             //  $("#boton_preview").click()
                 
                 if ($("#check_borrador").prop("checked") == true) {
 
@@ -417,6 +419,7 @@
                 $("#estado_entrada").removeClass("bg-success")
                 $("#estado_entrada").addClass("bg-secondary")
                 $("#estado_entrada").attr("value","----")
+               // $("#featurette").empty()
                 $("#etiquetas").empty()
 
 
