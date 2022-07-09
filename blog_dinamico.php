@@ -15,7 +15,7 @@ if($conn->connect_error) {
 if(isset($_GET['titulo'])){
   $_titulo = $_GET['titulo'];
   $sql = "SELECT id, entrada_completa FROM blog WHERE titulo = '$_titulo'";
-  $sql_featurette = "SELECT featurette FROM blog WHERE titulo <> '$_titulo'";
+  $sql_featurette = "SELECT estado, featurette FROM blog WHERE titulo <> '$_titulo'";
   $result = $conn->query($sql);
   $result_featurettes = $conn->query($sql_featurette);
 
@@ -28,10 +28,13 @@ if ($result->num_rows > 0){
   $string_featurette=""; // Se inicializa el string
 if ($result_featurettes->num_rows > 0){
     while($row_f = $result_featurettes->fetch_assoc()) {
+       if($row_f["estado"] == "Publicada"){
         $string_featurette.=$row_f["featurette"]; // Se concatena el string con cada resultado de la DB
-     }
+     
+       }
     }
       
+  }
 }
 }
 
@@ -201,6 +204,7 @@ require "pildoras.php";
               echo $string_featurette;
             //  unset($_GET['titulo']);
             }
+
 
 ?>
 
