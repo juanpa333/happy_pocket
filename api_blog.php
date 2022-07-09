@@ -180,7 +180,7 @@
 
     </div>      
             <!--empieza check group-->
-          <div class=" col-3  text-nowrap align-content-center mt-4 border" id="area_check_publicar">
+          <div class=" col-3  text-nowrap align-content-center mt-4" id="area_check_publicar">
                 <div class="form-check ">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="check_borrador" value="opcion_1" checked>
                     <label class="form-check-label" for="check_borrador">
@@ -205,6 +205,7 @@
   
   </div>
 
+  <h3 class="text-danger mt-5">Preview entrada completa</h3><hr>
   <div>
 	<div id="preview_entrada" class="my-5">
   <div class="col" >
@@ -268,6 +269,20 @@
   
   </div>
 
+
+  <h3 class="text-danger">Preview Featurette</h3><hr>
+
+  <div id="featurette" class="col-3">
+    <div id="featurette_interna">
+        
+          <p id="titulo_featurette" class=" mb-1 " style="font-size: smaller;">
+            Titulo
+          </p>
+          <a id="link_featurette" href=""><img id="url_imagen_featurette" src="" alt="" class="img-fluid"></a>
+          
+        
+    </div>
+  </div>
     
         </div><!-- /.container -->
 

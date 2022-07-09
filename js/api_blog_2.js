@@ -25,6 +25,7 @@
                 var estado
                 var href_entrada
                 var preview_entrada
+                var html_featurette
 
 
        
@@ -67,10 +68,14 @@
              titulo = $("#Input_titulo").val()
              //   console.log("titulo : " + titulo)
                 $("#titulo_entrada").text(titulo)
+                $("#titulo_featurette").text(titulo)
+
                 $("#titulo_entrada_comprimida").text(titulo)
                 $("[data-titulo]").attr("data-titulo", titulo)
                 href_entrada = "blog_dinamico.php?titulo=" + titulo 
                 $("#boton_entrada_comprimida").attr("href", href_entrada)
+                $("#link_featurette").attr("href", href_entrada)
+
 
                 input_fecha = $("#Input_fecha").val();
                 console.log("input_fecha :" + input_fecha);
@@ -129,6 +134,7 @@
                 console.log("url img: " + url_img);
                 $("#imagen_entrada").attr("src", url_img);
                 $("#imagen_entrada_comprimida").attr("src", url_img);
+                $("#url_imagen_featurette").attr("src" , url_img);
 
             var parrafo_intro = $("#texto_editor_preview p").eq(1).text();
             console.log("parrafo intro: " + parrafo_intro); 
@@ -171,7 +177,10 @@
                  console.log("Preview editor de carga: " + $("#preview_editor_carga").html())
                 
                 console.log("Entrada completa: " + entrada_completa)
-     
+
+                html_featurette = $("#featurette").html()
+
+                console.log("html featurette: " + html_featurette)
                 });
               });
      
@@ -333,7 +342,8 @@
                     entrada_comprimida : string_preview_comprimido_html, 
                     entrada_completa : entrada_completa, 
                     texto_editor_html : texto_editor_html,
-                    estado : estado
+                    estado : estado ,
+                    featurette : html_featurette
                     
                     
                   

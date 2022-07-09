@@ -17,6 +17,7 @@ $_etiquetas = $_POST['etiquetas'];
 $_entrada_comprimida = $_POST['entrada_comprimida'];
 $_entrada_completa = $_POST['entrada_completa'];
 $_texto_editor_html = $_POST['texto_editor_html'];
+$_featurette = $_POST['featurette'];
 
 
 
@@ -52,7 +53,8 @@ if ($resultado_existencia_titulo->num_rows > 0){
         estado = '$_estado',
         tema = '$_tema',
         etiquetas = '$_etiquetas', 
-        texto_editor_html = '$_texto_editor_html'
+        texto_editor_html = '$_texto_editor_html' , 
+        featurette = '$_featurette'
 
        WHERE id = '$_id'";
 
@@ -61,7 +63,7 @@ if ($resultado_existencia_titulo->num_rows > 0){
 }else{
 $sql = "INSERT INTO blog (titulo, entrada_comprimida, entrada_completa, fecha, autor, estado, tema, etiquetas, texto_editor_html)
                VALUES (  '$_titulo', '$_entrada_comprimida' , '$_entrada_completa', '$_fecha' , '$_autor', '$_estado' ,  '$_tema' ,
-                        '$_etiquetas' , '$_texto_editor_html')";
+                        '$_etiquetas' , '$_texto_editor_html' ,  '$_featurette')";
 $conn->query($sql);
 
 }

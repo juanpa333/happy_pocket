@@ -15,13 +15,23 @@ if($conn->connect_error) {
 if(isset($_GET['titulo'])){
   $_titulo = $_GET['titulo'];
   $sql = "SELECT id, entrada_completa FROM blog WHERE titulo = '$_titulo'";
+  $sql_featurette = "SELECT featurette FROM blog WHERE titulo <> '$_titulo'";
   $result = $conn->query($sql);
+  $result_featurettes = $conn->query($sql_featurette);
 
   $string_resultado=""; // Se inicializa el string
 if ($result->num_rows > 0){
     while($row = $result->fetch_assoc()) {
         $string_resultado.=$row["entrada_completa"]; // Se concatena el string con cada resultado de la DB
       }
+
+  $string_featurette=""; // Se inicializa el string
+if ($result_featurettes->num_rows > 0){
+    while($row_f = $result_featurettes->fetch_assoc()) {
+        $string_featurette.=$row_f["featurette"]; // Se concatena el string con cada resultado de la DB
+     }
+    }
+      
 }
 }
 
@@ -110,7 +120,7 @@ require "pildoras.php";
  
           <div id="entradas_comprimidas" class="">
   
-                <span class="row justify-content-center text-align border" id="entradas_comprimidas_seccion_interna">Entradas comprimidas</span>
+                <span class="row justify-content-center text-align " id="entradas_comprimidas_seccion_interna"></span>
          </div>
    
   </div>
@@ -118,21 +128,21 @@ require "pildoras.php";
 
   <div class="container mb-5">
  
-          <div id="entradas_por_tema" class="border">
+          <div id="entradas_por_tema" class="">
   
-                <span class="row justify-content-center text-align border" id="entradas_por_tema_seccion_interna">Entradas por tema</span>
+                <span class="row justify-content-center text-align" id="entradas_por_tema_seccion_interna"></span>
          </div>
    
   </div>
   
   <div class="container mb-5">
  
-      <div id="entrada_palabras_clave" class="border">
+      <div id="entrada_palabras_clave" class="">
 
-            <span class="row justify-content-center text-align border" id="entrada_palabras_clave_seccion_interna">
-              
+            <span class="row justify-content-center text-align" id="entrada_palabras_clave_seccion_interna">
+            
             <?php
-
+ 
                
                 if(isset($_GET['etiqueta'])){
                   echo '<script>$("#entradas_comprimidas").hide()</script>';
@@ -141,12 +151,12 @@ require "pildoras.php";
                   echo '<script>$("#entrada_seleccionada").hide()</script>';
                 echo '<script>$("#entrada_palabras_clave").show()</script>';
                   echo $string_resultado;
-                  unset($_GET['etiqueta']);
+                 // unset($_GET['etiqueta']);
                 }
 
               ?>
             
-            Entradas por palabras clave
+            
           
             </span>
       
@@ -155,11 +165,11 @@ require "pildoras.php";
   </div>
 
 
-<div id="entrada_seleccionada" class="border">
+<div id="entrada_seleccionada" class="">
   <div >
     <div class="row">
-      <div class="col-1"></div>
-            <div class="col" id="entrada_seleccionada_seccion_interna">
+      
+            <div class="col ms-5 ps-3" id="entrada_seleccionada_seccion_interna">
               <?php
 
                
@@ -169,13 +179,37 @@ require "pildoras.php";
                   echo '<script>$("#entrada_palabras_clave").hide()</script>';
                   echo '<script>$("#entrada_seleccionada").show()</script>';
                   echo $string_resultado;
-                  unset($_GET['titulo']);
+                //  unset($_GET['titulo']);
                 }
 
               ?>
-              Entrada Seleccionada
+              
             </div>
-      <div id="featurettes" class="col-3 border">Featurettes</div>
+
+
+      <div id="featurettes" class="col-md-3 d-none d-md-block bg-light  me-3">
+        <div id="featurettes_seccion_interna">
+                        
+                    <?php
+
+                          
+            if(isset($_GET['titulo'])){
+              echo '<script>$("#entradas_comprimidas").hide()</script>';
+              echo '<script>$("#entradas_por_tema").hide()</script>';
+              echo '<script>$("#entrada_palabras_clave").hide()</script>';
+              echo '<script>$("#featurettes").show()</script>';
+              echo $string_featurette;
+            //  unset($_GET['titulo']);
+            }
+
+?>
+
+
+
+        
+        </div>
+        
+      </div>
     </div>
   </div>
 </div>

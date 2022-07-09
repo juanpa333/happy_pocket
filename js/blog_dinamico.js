@@ -162,7 +162,7 @@ console.log(window.location.href)
     $("#entradas_comprimidas_seccion_interna").empty()
     $("#entradas_comprimidas_seccion_interna").append(json.articulos_comprimidos)
   });
-}
+};
   })
 
 
