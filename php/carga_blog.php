@@ -5,9 +5,9 @@ date_default_timezone_set("America/Bogota");
 header("Content-Type: application/json;charset=utf-8"); //Muy necesario para tildes, eñes
 
 
-$servername = "173.201.185.75";  // Host del servidor donde está alojada la base de datos
-$username = "gomezjp"; // Usuario creado en la base de datos del servidor
-$password = "4upratos3";
+$servername = "localhost";  // Host del servidor donde está alojada la base de datos
+$username = "root"; // Usuario creado en la base de datos del servidor
+$password = "";
 $dbname = "i7730950_wp2"; 
 
 
@@ -22,9 +22,9 @@ if($conn->connect_error) {
 
 if(isset($_POST['tema'])){
   $_tema = $_POST['tema'];
-  $sql = "SELECT id, entrada_comprimida, estado FROM blog WHERE tema = '$_tema' ORDER by fecha ";
+  $sql = "SELECT id, entrada_comprimida, estado FROM blog WHERE tema = '$_tema' ORDER by fecha DESC ";
 
-} else {$sql = "SELECT id, entrada_comprimida, estado FROM blog ORDER by fecha";}
+} else {$sql = "SELECT id, entrada_comprimida, estado FROM blog ORDER by fecha DESC";}
 
 $result = $conn->query($sql);
 

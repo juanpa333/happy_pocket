@@ -26,7 +26,7 @@ pg_close($dbconn); */
 
 // PDO MySQL
 
-$servername = "173.201.185.75";  // Host del servidor donde está alojada la base de datos
+$servername = "localhost";  // Host del servidor donde está alojada la base de datos
 $username = "gomezjp"; // Usuario creado en la base de datos del servidor
 $password = "4upratos3";
 $dbname = "i7730950_wp2"; 

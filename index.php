@@ -59,7 +59,7 @@
               <div class="col">
                     <br><br><br><br><p class="fs-5 text-warning text-center mx-2 rounded-3  py-2 ">Mejora el ambiente laboral y productivo de la empresa, invirtiendo en la salud financiera de tus colaboradores</p>
                                      <p class="text-light text-center  fs-4 mx-2 rounded-3 py-2 ">TALLER: MEJORA TU SALUD FINANCIERA</p>
-                   <center><a type="button" class="btn btn-primary" href="empresas.html">Conoce más</a><center>
+                   <center><a type="button" class="btn btn-primary" href="empresas.php">Conoce más</a><center>
         
                </div>
        
@@ -79,7 +79,7 @@
               <div class="col">
                     <br><br><br><br><p class="fs-5  text-center  rounded-3 mx-2 py-2 " style="color: #0047BA">Aprovecha estos recursos GRATUITOS para organizar mejor tus finanzas y conocer mejor tu perfil financiero</p>
                                      <p class="text-light text-center  fs-4  rounded-3 py-2">RECURSOS GRATUITOS PARA MEJORAR TUS FINANZAS</p>
-                   <center><a type="button" class="btn btn-primary" href="recursos.html">Consúltalos</a><center>
+                   <center><a type="button" class="btn btn-primary" href="recursos.php">Consúltalos</a><center>
         
                </div>
         
@@ -97,7 +97,7 @@
               <div class="col">
                     <br><br><br><br><p class="fs-5 text-light text-center mx-2 rounded-3  py-2 ">Recibe acompañamiento profesional, imparcial y personalizado para mejorar el manejo de tus recursos</p>
                                      <p class="text-warning text-center  fs-4  rounded-3 py-2 ">CONSEJERÍA FINANCIERA PERSONALIZADA</p>
-                   <center><a type="button" class="btn btn-primary" href="personas.html">Conoce más</a><center>
+                   <center><a type="button" class="btn btn-primary" href="personas.php">Conoce más</a><center>
         
                </div>
              
@@ -118,7 +118,7 @@
               <div class="col">
                     <br><br><br><br><p class="fs-5  text-center  rounded-3 mx-2  py-2 " style="color: #0047BA">Aprende sobre finanzas, acciones, fondos de inversión colectiva, créditos y muchos otros temas de interés</p>
                                      <p class="text-light text-center  fs-4  rounded-3 py-2 ">EDUCACIÓN FINANCIERA PARA TODOS</p>
-                   <center><a type="button" class="btn btn-primary" href="blog.html">¡Quiero aprender!</a><center>
+                   <center><a type="button" class="btn btn-primary" href="blog_dinamico.php">¡Quiero aprender!</a><center>
         
                </div>
              
@@ -170,7 +170,7 @@
               <div class="col">
                     <br><br><br><br><p class="fs-5 text-warning text-center  rounded-3 ms-5 py-2 ">Mejora el ambiente laboral y productivo de la empresa, invirtiendo en la salud financiera de tus colaboradores</p>
                                      <p class="text-light text-center  fs-3  rounded-3 py-2 ms-5">TALLER: MEJORA TU SALUD FINANCIERA</p>
-                   <center><a type="button" class="btn btn-primary" href="empresas.html">Conoce más</a><center>
+                   <center><a type="button" class="btn btn-primary" href="empresas.php">Conoce más</a><center>
         
                </div>
         <div class="col-6  ">
@@ -196,7 +196,7 @@
               <div class="col">
                     <br><br><br><br><p class="fs-5  text-center  rounded-3 me-5 py-2 " style="color: #0047BA">Aprovecha estos recursos GRATUITOS para organizar mejor tus finanzas y conocer mejor tu perfil financiero</p>
                                      <p class="text-light text-center  fs-3  rounded-3 py-2 me-5">RECURSOS GRATUITOS PARA MEJORAR TUS FINANZAS</p>
-                   <center><a type="button" class="btn btn-primary" href="recursos.html">Consúltalos</a><center>
+                   <center><a type="button" class="btn btn-primary" href="recursos.php">Consúltalos</a><center>
         
                </div>
         
@@ -214,7 +214,7 @@
               <div class="col">
                     <br><br><br><br><p class="fs-5 text-light text-center  rounded-3 ms-5 py-2 ">Recibe acompañamiento profesional, imparcial y personalizado para mejorar el manejo de tus recursos</p>
                                      <p class="text-warning text-center  fs-3  rounded-3 py-2 ms-5">CONSEJERÍA FINANCIERA PERSONALIZADA</p>
-                   <center><a type="button" class="btn btn-primary" href="personas.html">Conoce más</a><center>
+                   <center><a type="button" class="btn btn-primary" href="personas.php">Conoce más</a><center>
         
                </div>
               <div class="col-6 ">
@@ -241,7 +241,7 @@
               <div class="col">
                     <br><br><br><br><p class="fs-5  text-center  rounded-3 me-5 py-2 " style="color: #0047BA">Aprende sobre finanzas, acciones, fondos de inversión colectiva, créditos y muchos otros temas de interés</p>
                                      <p class="text-light text-center  fs-3  rounded-3 py-2 me-5">EDUCACIÓN FINANCIERA PARA TODOS</p>
-                   <center><a type="button" class="btn btn-primary" href="blog.html">¡Quiero aprender!</a><center>
+                   <center><a type="button" class="btn btn-primary" href="blog_dinamico.php">¡Quiero aprender!</a><center>
         
                </div>
              
@@ -285,20 +285,20 @@
 
         
         <p>Importancia de la educación financera en cada etapa de la vida</p>
-        <p><a class="btn btn-primary" href="educacion-financiera-para-luchar-contra-la-desigualdad.html">ver artículo&raquo;</a></p>
+        <p><a class="btn btn-primary" href="blog_dinamico.php?titulo=EDUCACIÓN%20FINANCIERA%20PARA%20LUCHAR%20CONTRA%20LA%20DESIGUALDAD">ver artículo&raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <img class="bd-placeholder-img rounded-circle" src="recursos/consejero.jpg" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
 
         <p>Importancia de un Consejero Financiero independiente y de confianza</p>
-        <p><a class="btn" style="background-color: orange" href="mejora-tu-condicion-financiera-con-un-consejero-financiero.html">Ver artículo &raquo;</a></p>
+        <p><a class="btn" style="background-color: orange" href="blog_dinamico.php?titulo=MEJORA TU CONDICION FINANCIERA CON UN CONSEJERO FINANCIERO">Ver artículo &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col">
         <img class="bd-placeholder-img rounded-circle" src="recursos/finantial_news.png" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
 
         
         <p>Importancia de estar informado sobre las noticias que afectan tu bolsillo</p>
-        <p><a class="btn btn-primary" href="retos-de-informacion-que-enfrenta-un-inversionista.html">Ver artículo &raquo;</a></p>
+        <p><a class="btn btn-primary" href="blog_dinamico.php?titulo=LOS RETOS DE INFORMACIÓN QUE ENFRENTA UN INVERSIONISTA">Ver artículo &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
 
@@ -316,7 +316,7 @@
         <p class="lead fs-6 ">Internet cuenta con mucha información sobre conceptos financieros y recomendaciones para mejorar las finanzas personales, pero en ocasiones no es fácil llevar la teoría a la práctica, debido a las particularidades de cada individuo. </p>
          <p class="lead fs-6">En ocasiones las personas o grupos familiares necesitan recibir un acompañamiento profesional, imparcial y más personalizado para lograr mejorar sus finanzas y avanzar en el camino hacia el cumplimiento de su propósito de vida. ¡Yo te ayudo! </p>
 
-         <a type="button" class="btn btn-primary  " href="personas.html">Agenda tu cita</a>
+         <a type="button" class="btn btn-primary  " href="personas.php">Agenda tu cita</a>
 
       </div>
      

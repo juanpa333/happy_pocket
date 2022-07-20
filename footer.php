@@ -13,7 +13,7 @@
                 Happy Pocket
               </h6>
               <ul class="">
-                <li><a href="conoceme.html">Conóceme</a></li>
+                <li><a href="conoceme.php">Conóceme</a></li>
                 <li><a href="politica-de-privacidad.html">Política de privacidad</a></li>
                 <li><a href="politica-de-cookies.html">Política de cookies</a></li>
                </ul>
@@ -23,8 +23,8 @@
             Servicios
           </h6>
           <ul class="">
-            <li><a href="personas.html">Personas</a></li>
-            <li><a href="empresas.html">Empresas</a></li>
+            <li><a href="personas.php">Personas</a></li>
+            <li><a href="empresas.php">Empresas</a></li>
             
            </ul>
     </div>
@@ -68,3 +68,4 @@
     </script>
      </script>
      <script src="js/validacion_recursos.js"></script>
+     <script src="js/footer.js"></script>

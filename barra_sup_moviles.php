@@ -2,7 +2,7 @@
 <div class=" fixed-top d-md-none  bg-white " style="height: 90px g-0" >
       <div class="row">
         <div class="col">
-          <a href="index.html"><img src="recursos/logo_solo_sin_leyenda.png" class="mt-2 ms-2" width=45%></a>
+          <a href="index.php"><img src="recursos/logo_solo_sin_leyenda.png" class="mt-2 ms-2" width=45%></a>
         </div>
         <div class="col-8">
           
@@ -23,10 +23,10 @@
               <a href="conoceme.html" class="list-group-item list-group-item-action " aria-current="true">
                Conóceme
               </a>
-              <a href="empresas.html" class="list-group-item list-group-item-action">Empresas</a>
-              <a href="personas.html" class="list-group-item list-group-item-action">Personas</a>
-              <a href="blog.html" class="list-group-item list-group-item-action">Blog</a>
-              <a href="recursos.html" class="list-group-item list-group-item-action ">Recursos GRATIS</a>
+              <a href="empresas.php" class="list-group-item list-group-item-action">Empresas</a>
+              <a href="personas.php" class="list-group-item list-group-item-action">Personas</a>
+              <a href="blog_dinamico.php" class="list-group-item list-group-item-action">Blog</a>
+              <a href="recursos.php" class="list-group-item list-group-item-action ">Recursos GRATIS</a>
             </div>
           </div>
           </div>

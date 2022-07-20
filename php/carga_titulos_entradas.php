@@ -25,9 +25,9 @@ pg_close($dbconn); */
 
 // PDO MySQL
 
-$servername = "173.201.185.75";  // Host del servidor donde está alojada la base de datos
-$username = "gomezjp"; // Usuario creado en la base de datos del servidor
-$password = "4upratos3";
+$servername = "localhost";  // Host del servidor donde está alojada la base de datos
+$username = "root"; // Usuario creado en la base de datos del servidor
+$password = "";
 $dbname = "i7730950_wp2"; 
 
 
@@ -39,7 +39,7 @@ mysqli_set_charset($conn, "utf8"); //muy necesario para tildes, eñes
 if($conn->connect_error) {
     die("Fallo conexion: " . $conn_error);
 }
-$sql = "SELECT id, titulo FROM blog";
+$sql = "SELECT id, titulo FROM blog ORDER by fecha DESC";
 $result = $conn->query($sql);
 
 $string_resultado='<option id="item_seleccionado_titulo" selected>Editar entrada guardada</option>'; // Se inicializa el string

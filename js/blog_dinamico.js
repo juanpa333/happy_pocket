@@ -7,7 +7,7 @@ $(document).ready(function(){
     $("#pildora1").click(function(){
      
      
-      $.post("php/carga_blog_dinamico.php",
+      $.post("php/carga_blog.php",
     {
         
         tema : "Planeación financiera"
@@ -18,7 +18,7 @@ $(document).ready(function(){
       $("#entradas_comprimidas").hide()
       $("#entradas_por_tema").show()
       $("#entrada_seleccionada").hide()
-        $("#entradas_por_tema_seccion_interna").empty()
+      $("#entradas_por_tema_seccion_interna").empty()
       $("#entradas_por_tema_seccion_interna").append(json.articulos_comprimidos)
     });
     
@@ -30,7 +30,7 @@ $(document).ready(function(){
 
     $("#pildora2").click(function(){
          
-      $.post("php/carga_blog_dinamico.php",
+      $.post("php/carga_blog.php",
     {
         
         tema : "Consumidor Inteligente" 
@@ -53,7 +53,7 @@ $(document).ready(function(){
 
     $("#pildora3").click(function(){
          
-      $.post("php/carga_blog_dinamico.php",
+      $.post("php/carga_blog.php",
     {
         
         tema : "Deudor Inteligente" 
@@ -75,7 +75,7 @@ $(document).ready(function(){
 
     $("#pildora4").click(function(){
          
-      $.post("php/carga_blog_dinamico.php",
+      $.post("php/carga_blog.php",
     {
         
         tema : "Inversionista Inteligente" 
@@ -99,7 +99,7 @@ $(document).ready(function(){
 
     $("#pildora5").click(function(){
          
-      $.post("php/carga_blog_dinamico.php",
+      $.post("php/carga_blog.php",
     {
         
         tema : "Actualidad Económica y Financiera" 
@@ -122,7 +122,7 @@ $(document).ready(function(){
 
     $("#pildora6").click(function(){
          
-      $.post("php/carga_blog_dinamico.php",
+      $.post("php/carga_blog.php",
     {
         
         tema : "Educación Financiera" 
@@ -147,8 +147,8 @@ $(document).ready(function(){
 $(document).ready(function(){
 
 console.log(window.location.href) 
-       if(window.location.href == 'http://localhost/jp/happy_pocket/blog_dinamico.php'){
-  $.post("php/carga_blog_dinamico.php",
+       if((window.location.href == 'http://localhost/jp/happy_pocket/blog_dinamico.php') || (window.location.href == 'https://www.happypocket.com.co/blog_dinamico.php')){
+  $.post("php/carga_blog.php",
   {
       
       todo : "todo"

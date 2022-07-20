@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <title>API blog</title>
+    
     <link rel="icon" type="image/png" href="recursos/icono.png">
     <link href="css/carousel.css" rel="stylesheet">
     <script src="ckeditor4/ckeditor/ckeditor.js"></script>
@@ -84,13 +85,16 @@
         ¿Está seguro que desea eliminar esta entrada?<br>
         <span class="text-light"> - No podrá deshacer esta acción - </span>
       </div>
-      <div class="modal-footer d-flex justify-content-center">
+      <div class="modal-footer d-flex justify-content-center" id="grupo_botones_eliminar_cancelar_modal">
         <button type="button" id="confirmar_eliminar_entrada" class="btn btn-primary">
-        <span class="spinner-border spinner-border-sm " role="status" aria-hidden="true"></span>
+        <span id="spinner_eliminar_entrada" class="spinner-border spinner-border-sm visually-hidden " role="status" aria-hidden="true"></span>
           <span class="visually-hidden">Loading...</span>  
         ELIMINAR ENTRADA</button>
         <button type="button" class="btn btn-warning" data-bs-dismiss="modal">CANCELAR</button>
       </div>
+
+      <p id=label_entrada_eliminada class="text-center fs-4 fst-italic"></p>
+
     </div>
   </div>
 </div>
@@ -166,11 +170,16 @@
 
             <div id="etiquetas"></div>
             
-            <p class="fw-bold mt-5">Aquí podrá ingresar la imagen principal de la entrada y el texto principal</p>
+            <p class="fw-bold mt-5">Aquí podrá ingresar la imagen principal de la entrada y el texto principal <br>
+            Recomendamos fuertemente, <span class="fst-italic text-decoration-underline text-danger">NO usar la función Pegar (ctrl + v)</span>  
+            </p>
                        
             <textarea  class="my-5" name="" id="editor1" cols="" rows=""></textarea>
-            </div>
 
+
+             </div>
+
+            
 
             
 
@@ -227,16 +236,24 @@
 
         
       <div id="cuerpo_principal_entrada">
-            
+      
+    
       </div>
     <p class="d-flex flex-column flex-md-row gap-2" id="etiquetas_entrada"></p> <!--Etiquetas-->
-    <!-- AddToAny BEGIN -->
-
+   
+   
+   
+            
 
       
     
     </div>
+
+    
   </div>
+  
+              
+           
   </div>
  <h1 class="d-none">Texto Editor Preview</h1>
   <div id="texto_editor_preview"></div>

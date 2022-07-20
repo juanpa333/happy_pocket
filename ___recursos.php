@@ -29,7 +29,7 @@
     <div class=" fixed-top d-md-none  bg-white " style="height: 90px g-0" >
       <div class="row">
         <div class="col">
-          <a href="index.html"><img src="recursos/logo_solo_sin_leyenda.png" class="mt-2 ms-2" width=45%></a>
+          <a href="index.php"><img src="recursos/logo_solo_sin_leyenda.png" class="mt-2 ms-2" width=45%></a>
         </div>
         <div class="col-8 ">
           
@@ -47,13 +47,13 @@
           <div class="bg-light p-4">
             <h5 class="text-black h4">Happy Pocket</h5>
             <div class="list-group">
-              <a href="conoceme.html" class="list-group-item list-group-item-action " aria-current="true">
+              <a href="conoceme.php" class="list-group-item list-group-item-action " aria-current="true">
                Conóceme
               </a>
-              <a href="empresas.html" class="list-group-item list-group-item-action">Empresas</a>
-              <a href="personas.html" class="list-group-item list-group-item-action">Personas</a>
-              <a href="blog.html" class="list-group-item list-group-item-action" >Blog</a>
-              <a href="recursos.html" class="list-group-item list-group-item-action" style="background-color: darkblue;color: white;">Recursos GRATIS</a>
+              <a href="empresas.php" class="list-group-item list-group-item-action">Empresas</a>
+              <a href="personas.php" class="list-group-item list-group-item-action">Personas</a>
+              <a href="blog.php" class="list-group-item list-group-item-action" >Blog</a>
+              <a href="recursos.php" class="list-group-item list-group-item-action" style="background-color: darkblue;color: white;">Recursos GRATIS</a>
             </div>
           </div>
           </div>
@@ -76,7 +76,7 @@
 <div class="fixed-top d-none d-md-block">
   <div class="row  bg-light" style="height: 90px">
  <div class="col bg-light rounded-2 bg-opacity-90 mx-3">
-       <a href="index.html"><img src="recursos/logo_simbolo_horizontal.png" width="430" height="87" alt="..."></a>
+       <a href="index.php"><img src="recursos/logo_simbolo_horizontal.png" width="430" height="87" alt="..."></a>
 
       </div>
 

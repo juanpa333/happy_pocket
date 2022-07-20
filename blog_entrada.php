@@ -54,16 +54,17 @@ require "pildoras.php";
     </div>
 
     <div class="col">
-    <?php
+   
+   <?php
 
 
 
 $_titulo = $_GET['titulo'];
 date_default_timezone_set("America/Bogota");
 //header("Content-Type: application/json;charset=utf-8"); //Muy necesario para tildes, eñes
-$servername = "173.201.185.75";  // Host del servidor donde está alojada la base de datos
-$username = "gomezjp"; // Usuario creado en la base de datos del servidor
-$password = "4upratos3";
+$servername = "localhost";  // Host del servidor donde está alojada la base de datos
+$username = "root"; // Usuario creado en la base de datos del servidor
+$password = "";
 $dbname = "i7730950_wp2"; 
 
 $conn = new mysqli($servername, $username, $password, $dbname);

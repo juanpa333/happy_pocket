@@ -7,7 +7,7 @@
                 width :1000,
                 height:200
                 });
-                CKFinder.setupCKEditor(editor, 'http://localhost/jp/happy_pocket/ckeditor4/ckfinder')
+                CKFinder.setupCKEditor(editor, 'http://www.happypocket.com.co/ckeditor4/ckfinder')
             } 
 
 
@@ -61,12 +61,12 @@
             */
 
              titulo_seleccionado = $("#opciones_titulo").val()
-          //  $("#texto_editor_html").text(texto_editor_html);
+          
           $("#texto_editor_preview").empty()
             $("#texto_editor_preview").prepend(texto_editor_html);
 
              titulo = $("#Input_titulo").val()
-             //   console.log("titulo : " + titulo)
+            
                 $("#titulo_entrada").text(titulo)
                 $("#titulo_featurette").text(titulo)
 
@@ -148,31 +148,26 @@
 
 
                 $("#texto_editor_preview p img").parent().attr("id", "parrafo_imagen_preview");
-             //   $("#texto_editor_preview p img").parent().empty();
+            
 
                 $("#texto_editor_preview p").eq(1).attr("id", "parrafo_intro_preview");
-              //  $("#texto_editor_preview p").eq(1).empty();
-           // var cuerpo_principal = $(texto_editor_html).first("p").next().nextAll().html();
-          //  var cuerpo_principal = $("#texto_editor_preview p img").nextAll().html();
-           // console.log("cuerpo principal: " + cuerpo_principal)
-               
-          //  $("#cuerpo_principal_entrada").html(cuerpo_principal);
+            
              $("#parrafo_intro_preview").nextAll().attr("class", "parrafos_siguientes_preview"); 
              $(".parrafos_siguientes_preview").wrapAll("<div id='conjunto_parrafos_preview'></div>");
                
                console.log("Texto editor HTML: " + $("#texto_editor_preview").html());
                $("#texto_editor_html").text($("#texto_editor_preview").html());
-              //  console.log("texto sin p img: " + texto_editor_html);
+             
               $("#parrafo_intro_entrada").text($("#parrafo_intro_preview").text())
               $("#cuerpo_principal_entrada").empty();
               $("#cuerpo_principal_entrada").prepend($("#conjunto_parrafos_preview").html());
 
                entrada_completa = $("#preview_entrada").html();
 
-               // Crear un div en el dom , para entrada_editor_carga, manipularlo, guardarlo en BD
+             
 
                $("body").append("<div id='preview_editor_carga'></div>")
-               //  $("#preview_editor_carga").hide()
+               
 
                  console.log("Preview editor de carga: " + $("#preview_editor_carga").html())
                 
@@ -249,81 +244,14 @@
 
 // Guardar en la BD, la entrada, bien sea guardar o publicar
         // Para guardar /publicar, se debe tener en cuenta:
-        $(document).ready(function(){
-            
-
-            $("").click(function(){
-
-              var titulos_db = $("#opciones_titulo").val();
-              var titulo = $("#Input_titulo").val();
-              var fecha = $("#Input_fecha").val();
-              var autor = $("#Input_autor").val();
-              var temas = $("#selec_temas_blog").val();
-              var parrafo_introductorio = $("#Input_primer_parrafo").val();
-              var etiquetas = $("#Input_etiquetas").val();
-              
-              $.ajax({
-                // la URL para la petición
-                url : 'php/ingreso_entradas_blog.php',
-             
-                // la información a enviar
-                // (también es posible utilizar una cadena de datos)
-                // El valor de la derecha, es el valor de jscript (jquery)
-                // El valor de la izquierda es el nombre de la variable POST
-                data : { 
-                        
-                        titulo :  titulo , 
-                        fecha : fecha ,
-                        autor : autor ,
-                        tema : tema ,
-                        parrafo_intro : parrafo_intro ,  
-                        etiquetas : etiquetas 
-                        
-                                                              
-                        },
-             
-                // especifica si será una petición POST o GET
-                type : 'POST',
-             
-                // el tipo de información que se espera de respuesta
-                dataType : 'json',
-             
-                // código a ejecutar si la petición es satisfactoria;
-                // la respuesta es pasada como argumento a la función
-                success : function(json) {
-                            
-                    console.log("Entrada ingresada a la BD")
-                   
-                },
-             
-                // código a ejecutar si la petición falla;
-                // son pasados como argumentos a la función
-                // el objeto jqXHR (extensión de XMLHttpRequest), un texto con el estatus
-                // de la petición y un texto con la descripción del error que haya dado el servidor
-                error : function(jqXHR, status, error) {
-                 alert(error);
-                },
-             
-              //  código a ejecutar sin importar si la petición falló o no
-                complete : function(jqXHR, status) {
-                   // alert('Petición realizada');
-                   // alert(json.status);
-                }
-            })
-              console.log(titulos_db);
-             // alert(titulo);
-               //Muestro el objeto en un div
-      
-                });
-    
-              });
+       
             // Verificar si la entrada existe, y reemplazarla
             //Si la entrada no existe, guardarla y/o publicarla
 
             $(document).ready(function(){
               $("#boton_guardar").click(function(){
 
-             //  $("#boton_preview").click()
+               $("#boton_preview").click()
                 
                 if ($("#check_borrador").prop("checked") == true) {
 
@@ -351,8 +279,8 @@
                   
                 },
                 function(data,status){
-                  $("#principal").show();
-                  alert("Data: " + data + "\nStatus: " + status);
+                //  $("#principal").show();
+                 // alert("Data: " + data + "\nStatus: " + status);
                 });
               });
             });  
@@ -433,6 +361,8 @@
             
             $(document).ready(function(){
               $("#confirmar_eliminar_entrada").click(function(){
+
+
                 $.post("php/elimine_entrada.php",
                 {
                   titulo : $("#Input_titulo").val() ,  
@@ -442,19 +372,37 @@
                 function(data,status){
                  
                 });
+                
+                $("#spinner_eliminar_entrada").removeClass("visually-hidden")
+                
+                setTimeout(oculta_spinner, 1000) 
+                setTimeout(muestra_etiqueta_eliminada, 1000) 
+                setTimeout(oculta_etiqueta_eliminada, 3000) 
+
+               
               });
             });  
 
 
+              
+            function oculta_spinner() {
 
-            $(document).ready(function(){
-              $("").click(function(){
+              $("#spinner_eliminar_entrada").addClass("visually-hidden")
+             
+              
+            }
 
-                console.log("Check_borrador: " + $("#check_borrador").prop("checked"))
-                console.log("Check_publicar: " + $("#check_publicar").prop("checked"))
+            function muestra_etiqueta_eliminada() {
+              $("#label_entrada_eliminada").text("Entrada eliminada")
+              
+            }
 
-              });
-            });  
+            
+            function oculta_etiqueta_eliminada() {
+              $("#label_entrada_eliminada").text("")
+              
+            }
+          
 
 
             $(document).ready(function(){
@@ -474,7 +422,7 @@
               $("#clase_etiqueta").click(function(){
 
                 console.log("click en etiqueta")
-             //  console.log($(this).text())
+            
               });
 
 
@@ -491,5 +439,28 @@
               });
             });  
 
+            document.addEventListener('keydown', function(event) {
+              if (event.ctrlKey && event.key === 'v') {
+                alert('Recomendamos fuertemente, no usar la función "ctrl + v" en esta API');
+              }
+            });
 
-           
+
+            // Aquí funcion settimeout para poner en la funcion eliminar
+
+
+            $(document).ready(function(){
+           //   $("#confirmar_eliminar_entrada").click(function(){
+
+               
+              
+                
+                
+              });
+        //    });  
+
+              
+                
+
+               
+                

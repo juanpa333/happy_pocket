@@ -1,12 +1,21 @@
 <?php
  date_default_timezone_set("America/Bogota");
 
- $servername = "173.201.185.75";  // Host del servidor donde está alojada la base de datos
- $username = "gomezjp"; // Usuario creado en la base de datos del servidor
- $password = "4upratos3";
- $dbname = "i7730950_wp2"; 
- $conn = new mysqli($servername, $username, $password, $dbname);
-mysqli_set_charset($conn, "utf8"); //muy necesario para tildes, eñes
+ //$servername = "localhost";  // Host del servidor donde está alojada la base de datos
+ //$username = "gomezjp"; // Usuario creado en la base de datos del servidor
+ //$password = "4upratos3";
+ //$dbname = "i7730950_wp2"; 
+ 
+
+ $servername = "localhost";  // Host del servidor donde está alojada la base de datos
+$username = "root"; // Usuario creado en la base de datos del servidor
+$password = "";
+$dbname = "i7730950_wp2"; 
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+
+mysqli_set_charset($conn, "utf8mb4"); //muy necesario para tildes, eñes
 
 if($conn->connect_error) {
     die("Fallo conexion: " . $conn_error);
@@ -15,7 +24,7 @@ if($conn->connect_error) {
 if(isset($_GET['titulo'])){
   $_titulo = $_GET['titulo'];
   $sql = "SELECT id, entrada_completa FROM blog WHERE titulo = '$_titulo'";
-  $sql_featurette = "SELECT estado, featurette FROM blog WHERE titulo <> '$_titulo'";
+  $sql_featurette = "SELECT estado, featurette FROM blog WHERE titulo <> '$_titulo' ORDER by fecha DESC";
   $result = $conn->query($sql);
   $result_featurettes = $conn->query($sql_featurette);
 
@@ -24,13 +33,16 @@ if ($result->num_rows > 0){
     while($row = $result->fetch_assoc()) {
         $string_resultado.=$row["entrada_completa"]; // Se concatena el string con cada resultado de la DB
       }
-
+$_contador_featurettes = 0;
   $string_featurette=""; // Se inicializa el string
 if ($result_featurettes->num_rows > 0){
     while($row_f = $result_featurettes->fetch_assoc()) {
+      
        if($row_f["estado"] == "Publicada"){
-        $string_featurette.=$row_f["featurette"]; // Se concatena el string con cada resultado de la DB
-     
+        $_contador_featurettes += 1;
+        if ($_contador_featurettes < 6){
+        $string_featurette.=$row_f["featurette"]."<br>"; // Se concatena el string con cada resultado de la DB
+        }
        }
     }
       
@@ -42,7 +54,7 @@ if(isset($_GET['etiqueta'])){
  
   $_etiqueta = $_GET['etiqueta'];
  // $sql = "SELECT id, entrada_comprimida FROM blog WHERE etiquetas LIKE '$_etiqueta'";
- $sql = "SELECT id, entrada_comprimida, etiquetas FROM blog";
+ $sql = "SELECT id, entrada_comprimida, etiquetas FROM blog ORDER BY fecha DESC";
   $result = $conn->query($sql);
 
   $string_resultado=""; // Se inicializa el string
@@ -78,15 +90,25 @@ if ($result->num_rows > 0){
 
     <!-- Bootstrap CSS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/scripts.js"></script>
+   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="css/style_hp.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <title>Blog -  Happy Pocket</title>
+    <title>
+          <?php
+            if(isset($_GET['titulo'])){
+              $_titulo_title = ($_GET['titulo']);
+              echo  $_titulo_title;
+            
+            //  unset($_GET['titulo']);
+            }else{echo "Blog - Happy Pocket";}
+          ?>
+    </title>
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=62d374fcacbf2a0019029e5e&product=sticky-share-buttons" async="async"></script>
     <link rel="icon" type="image/png" href="recursos/icono.png">
     <link href="css/carousel.css" rel="stylesheet">
     <script src="js/blog_dinamico.js"></script>
-    
+    <script src="js/scripts.js"></script>
     
     <!-- Custom styles for this template -->
    
@@ -177,12 +199,30 @@ require "pildoras.php";
 
                
                 if(isset($_GET['titulo'])){
+                  $_titulo_title = $_GET['titulo'];
                   echo '<script>$("#entradas_comprimidas").hide()</script>';
                   echo '<script>$("#entradas_por_tema").hide()</script>';
                   echo '<script>$("#entrada_palabras_clave").hide()</script>';
                   echo '<script>$("#entrada_seleccionada").show()</script>';
+                  $cadena_titulo = '<script>$("head title").text('.$_titulo_title.')</script>';
+                  echo $cadena_titulo;
                   echo $string_resultado;
                 //  unset($_GET['titulo']);
+
+                echo '
+                <!-- AddToAny BEGIN -->
+                <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                <a class="a2a_button_facebook"></a>
+                <a class="a2a_button_twitter"></a>
+                <a class="a2a_button_email"></a>
+                <a class="a2a_button_whatsapp"></a>
+                <a class="a2a_button_linkedin"></a>
+                </div>
+                <script async src="https://static.addtoany.com/menu/page.js"></script>
+                <!-- AddToAny END -->
+                  ';
+
                 }
 
               ?>
@@ -202,6 +242,7 @@ require "pildoras.php";
               echo '<script>$("#entrada_palabras_clave").hide()</script>';
               echo '<script>$("#featurettes").show()</script>';
               echo $string_featurette;
+             
             //  unset($_GET['titulo']);
             }
 

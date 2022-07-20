@@ -1,9 +1,12 @@
 <!---Comienza logo y navbar fijos superior--->
+<script src="js/scripts.js"></script>
 
+
+    
 <div class="fixed-top d-none d-md-block ">
-  <div class="row  bg-light" style="height: 90px">
- <div class="col bg-light rounded-2 bg-opacity-90 mx-3 animate__animated animate__slideInRight ">
-       <a href="index.html"><img src="recursos/logo_simbolo_horizontal.png" width="430" height="87" alt="..."></a>
+      <div class="row  bg-light" style="height: 90px">
+    <div class="col bg-light rounded-2 bg-opacity-90 mx-3 animate__animated animate__slideInRight ">
+        <a href="index.php"><img src="recursos/logo_simbolo_horizontal.png" width="430" height="87" alt="..."></a>
 
       </div>
 
@@ -33,21 +36,21 @@
     <div class="collapse navbar-collapse " id="navbarNavDropdown">
           
           <ul class="navbar-nav">
-               <li class="nav-item mx-4">
-                <a class="nav-link active text-light fs-5 mx-2" aria-current="page" href="conoceme.html">Conóceme</a>
+               <li class="nav-item mx-4 ">
+                <a id="link_conoceme" class="nav-link active text-light fs-5 mx-2  " aria-current="page" href="conoceme.php">Conóceme</a>
               </li>
               <li class="nav-item mx-4">
-                <a class="nav-link active text-light fs-5 mx-2" aria-current="page" href="empresas.html">Empresas</a>
+                <a id="link_empresas" class="nav-link active text-light fs-5 mx-2" aria-current="page" href="empresas.php">Empresas</a>
               </li>
               <li class="nav-item mx-4">
-                <a class="nav-link text-light fs-5 mx-2" href="personas.html">Personas</a>
+                <a id="link_personas" class="nav-link text-light fs-5 mx-2" href="personas.php">Personas</a>
               </li>
              
                <li class="nav-item mx-4 ">
-                <a class="nav-link text-light fs-5 mx-2" href="blog_dinamico.php">Blog</a>
+                <a id="link_blog" class="nav-link text-light fs-5 mx-2" href="blog_dinamico.php">Blog</a>
               </li>
                <li class="nav-item mx-4 ">
-                <a class="nav-link text-light fs-5 mx-2" href="recursos.html">Recursos GRATIS</a>
+                <a id="link_recursos" class="nav-link text-light fs-5 mx-2" href="recursos.php">Recursos GRATIS</a>
               </li>
               
           
@@ -72,5 +75,7 @@
 
 
 </div>
+<script src="js/etiquetas_principales.js"></script>
+
 
 <!---termina logo y navbar fijos superior--->
