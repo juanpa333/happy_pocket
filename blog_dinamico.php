@@ -113,7 +113,7 @@ if ($result->num_rows > 0){
     <!-- Custom styles for this template -->
    
   </head>
-  <body style="margin-bottom: 0cm;padding-bottom: 0cm;" >
+  <body>
 
   
    <?php
@@ -146,11 +146,14 @@ require "pildoras.php";
           <div id="entradas_comprimidas" class="">
   
                 <span class="row justify-content-center text-align " id="entradas_comprimidas_seccion_interna"></span>
-         </div>
+         
+                
+              </div>
+             
    
   </div>
 
-
+ 
   <div class="container mb-5">
  
           <div id="entradas_por_tema" class="">
@@ -181,10 +184,12 @@ require "pildoras.php";
 
                     //  echo json_encode($json);
  
-
+                    $conn = null;
+                  
                   ?>
 
                 </span>
+              
          </div>
    
   </div>
@@ -206,6 +211,7 @@ require "pildoras.php";
                 echo '<script>$("#entrada_palabras_clave").show()</script>';
                   echo $string_resultado;
                  // unset($_GET['etiqueta']);
+                 $conn = null;
                 }
 
               ?>
@@ -228,13 +234,13 @@ require "pildoras.php";
 
                
                 if(isset($_GET['titulo'])){
-                  $_titulo_title = $_GET['titulo'];
+             //     $_titulo_title = $_GET['titulo'];
                   echo '<script>$("#entradas_comprimidas").hide()</script>';
                   echo '<script>$("#entradas_por_tema").hide()</script>';
                   echo '<script>$("#entrada_palabras_clave").hide()</script>';
                   echo '<script>$("#entrada_seleccionada").show()</script>';
-                  $cadena_titulo = '<script>$("head title").text('.$_titulo_title.')</script>';
-                  echo $cadena_titulo;
+               //   $cadena_titulo = '<script>$("head title").text('.$_titulo_title.')</script>';
+                //  echo $cadena_titulo;
                   echo $string_resultado;
                 //  unset($_GET['titulo']);
 
@@ -253,39 +259,45 @@ require "pildoras.php";
                   ';
 
                 }
-
+                $conn = null;
               ?>
               
             </div>
-
+           
 
       <div id="featurettes" class="col-md-3 d-none d-md-block bg-light  me-3">
         <div id="featurettes_seccion_interna">
                         
                     <?php
 
-                          
-            if(isset($_GET['titulo'])){
-              echo '<script>$("#entradas_comprimidas").hide()</script>';
-              echo '<script>$("#entradas_por_tema").hide()</script>';
-              echo '<script>$("#entrada_palabras_clave").hide()</script>';
-              echo '<script>$("#featurettes").show()</script>';
-              echo $string_featurette;
-             
-            //  unset($_GET['titulo']);
-            }
+                                      
+                        if(isset($_GET['titulo'])){
+                          echo '<script>$("#entradas_comprimidas").hide()</script>';
+                          echo '<script>$("#entradas_por_tema").hide()</script>';
+                          echo '<script>$("#entrada_palabras_clave").hide()</script>';
+                          echo '<script>$("#featurettes").show()</script>';
+                          echo $string_featurette;
+                        
+                        //  unset($_GET['titulo']);
+                        $conn = null;
+                     
+                        }
 
 
-?>
+                  ?>
 
 
 
         
         </div>
-        
+       
       </div>
     </div>
   </div>
+
+
+  
+
 </div>
  
 
@@ -294,9 +306,9 @@ require "pildoras.php";
 
 
 
-
-  <?php
+<?php
   require "footer.php";
+ 
   ?>
     
     
@@ -304,6 +316,8 @@ require "pildoras.php";
 
 
 
-    </script>
+    
   </body>
+
+  
 </html>
