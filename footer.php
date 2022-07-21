@@ -34,12 +34,12 @@
         Aprende
       </h6>
       <ul class="">
-        <li><a href="blog-planeacion-financiera.html">Planeación Financiera</a></li>
-        <li><a href="blog-consumidor-inteligente.html">Consumidor Inteligente</a></li>
-        <li><a href="blog-deudor-inteligente.html">Deudor Inteligente</a></li>
-        <li><a href="blog-inversionista-inteligente.html">Inversionista Inteligente</a></li>
-        <li><a href="blog-actualidad-economica-y-financiera.html">Actualidad Económica y Financiera</a></li>
-        <li><a href="recursos.html">Recursos Gratis</a></li>
+        <li><a href="blog_dinamico.php?tema=Planeación financiera">Planeación Financiera</a></li>
+        <li><a href="blog_dinamico.php?tema=Consumidor Inteligente">Consumidor Inteligente</a></li>
+        <li><a href="blog_dinamico.php?tema=Deudor Inteligente">Deudor Inteligente</a></li>
+        <li><a href="blog_dinamico.php?tema=Inversionista Inteligente">Inversionista Inteligente</a></li>
+        <li><a href="blog_dinamico.php?tema=Actualidad Económica y Financiera">Actualidad Económica y Financiera</a></li>
+        <li><a href="recursos.php?tema=Educación Financiera">Recursos Gratis</a></li>
        </ul>
 </div>
         <div class="col-12 col-md my-3 " style="">

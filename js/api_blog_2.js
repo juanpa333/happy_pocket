@@ -439,11 +439,11 @@
               });
             });  
 
-            document.addEventListener('keydown', function(event) {
+      /*     document.addEventListener('keydown', function(event) {
               if (event.ctrlKey && event.key === 'v') {
                 alert('Recomendamos fuertemente, no usar la función "ctrl + v" en esta API');
               }
-            });
+            }); */
 
 
             // Aquí funcion settimeout para poner en la funcion eliminar

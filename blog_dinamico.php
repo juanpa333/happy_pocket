@@ -104,7 +104,7 @@ if ($result->num_rows > 0){
             }else{echo "Blog - Happy Pocket";}
           ?>
     </title>
-    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=62d374fcacbf2a0019029e5e&product=sticky-share-buttons" async="async"></script>
+  
     <link rel="icon" type="image/png" href="recursos/icono.png">
     <link href="css/carousel.css" rel="stylesheet">
     <script src="js/blog_dinamico.js"></script>
@@ -141,7 +141,7 @@ require "pildoras.php";
 
   
  
-<div class="container mb-5">
+<div class="container my-5">
  
           <div id="entradas_comprimidas" class="">
   
@@ -155,7 +155,36 @@ require "pildoras.php";
  
           <div id="entradas_por_tema" class="">
   
-                <span class="row justify-content-center text-align" id="entradas_por_tema_seccion_interna"></span>
+                <span class="row justify-content-center text-align" id="entradas_por_tema_seccion_interna">
+
+                  <?php
+
+                      if(isset($_GET['tema'])){
+                        $_tema = $_GET['tema'];
+                        $sql = "SELECT id, entrada_comprimida, estado FROM blog WHERE tema = '$_tema' ORDER by fecha DESC";
+
+                      }
+
+                      $result = $conn->query($sql);
+
+
+                      $string_entradas_comprimidas=""; // Se inicializa el string
+                      if ($result->num_rows > 0){
+                          while($row = $result->fetch_assoc()) {
+                              if ($row['estado'] == "Publicada"){
+                              $string_entradas_comprimidas.=$row["entrada_comprimida"]; // Se concatena el string con cada resultado de la DB
+                            }
+                          }
+                      }
+                      echo $string_entradas_comprimidas;
+                     // $json = array("articulos_comprimidos"=>$string_entradas_comprimidas);
+
+                    //  echo json_encode($json);
+ 
+
+                  ?>
+
+                </span>
          </div>
    
   </div>
@@ -271,6 +300,9 @@ require "pildoras.php";
   ?>
     
     
+  
+
+
 
     </script>
   </body>

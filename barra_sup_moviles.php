@@ -20,7 +20,7 @@
           <div class="bg-light p-4">
             <h5 class="text-black h4">Happy Pocket</h5>
             <div class="list-group">
-              <a href="conoceme.html" class="list-group-item list-group-item-action " aria-current="true">
+              <a href="conoceme.php" class="list-group-item list-group-item-action " aria-current="true">
                Conóceme
               </a>
               <a href="empresas.php" class="list-group-item list-group-item-action">Empresas</a>
