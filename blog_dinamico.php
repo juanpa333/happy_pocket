@@ -165,10 +165,10 @@ require "pildoras.php";
                       if(isset($_GET['tema'])){
                         $_tema = $_GET['tema'];
                         $sql = "SELECT id, entrada_comprimida, estado FROM blog WHERE tema = '$_tema' ORDER by fecha DESC";
+                        $result = $conn->query($sql);
+                      
 
                       }
-
-                      $result = $conn->query($sql);
 
 
                       $string_entradas_comprimidas=""; // Se inicializa el string
@@ -184,8 +184,8 @@ require "pildoras.php";
 
                     //  echo json_encode($json);
  
-                    $conn = null;
-                  
+                   $conn = null;
+                    
                   ?>
 
                 </span>

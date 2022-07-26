@@ -4,8 +4,8 @@ date_default_timezone_set("America/Bogota");
 
 header("Content-Type: application/json;charset=utf-8"); //Muy necesario para tildes, eñes
 
-
-$servername = "localhost";  // Host del servidor donde está alojada la base de datos
+$servername = "localhost";
+//$servername = "173.201.185.75";  // Host del servidor donde está alojada la base de datos
 $username = "root"; // Usuario creado en la base de datos del servidor
 $password = "";
 $dbname = "i7730950_wp2"; 
@@ -37,6 +37,9 @@ if ($result->num_rows > 0){
       }
     }
 }
+
+//$_v_footer = file_get_contents('../footer.php');
+//$string_entradas_comprimidas .= $_v_footer;
 //echo $string_resultado;
 $json = array("articulos_comprimidos"=>$string_entradas_comprimidas);
 

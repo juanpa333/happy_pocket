@@ -14,8 +14,8 @@
               </h6>
               <ul class="">
                 <li><a href="conoceme.php">Conóceme</a></li>
-                <li><a href="politica-de-privacidad.html">Política de privacidad</a></li>
-                <li><a href="politica-de-cookies.html">Política de cookies</a></li>
+                <li><a href="politica_de_privacidad.php">Política de privacidad</a></li>
+                <li><a href="politica_de_cookies.php">Política de cookies</a></li>
                </ul>
         </div>
         <div class="col col-md my-3 " >
