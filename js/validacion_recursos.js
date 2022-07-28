@@ -232,7 +232,11 @@
        
         $("#etiqueta_acepto").after("<br><p id='alerta_datos_exito' class='text-primary  text-center fst-italic fs-5'>¡Datos enviados con éxito!<br>Gracias por suscribirte, bienvenid@ a Happy Pocket<br>Si no recibes tu correo, revisa tu carpeta de Spam</p>");
       $("#link_recurso1_modal").fadeIn(1000);
-    
+      setTimeout(cierraModal, 3000)
+        function cierraModal() {
+      $(".btn-close").click()
+      
+    }
       $.ajax({
         // la URL para la petición
         url : 'php/queries_db.php',
@@ -311,6 +315,7 @@
   {}
   else{
   $("#link_recurso1_modal").fadeIn(1000);
+  
 
   $.ajax({
     // la URL para la petición

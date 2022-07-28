@@ -147,6 +147,7 @@
 
   <?php
   require "footer.php";
+ // require "modal_newsletter.php";
   ?>
   
   </body>

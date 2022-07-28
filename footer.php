@@ -6,7 +6,7 @@
     <div class="row shadow border " style="background-color: #0F0C47; height:fit-content; font-size:medium;">
       <div class="col-3 d-sm-none"></div>
         <div class=" col-6 col-md-2 my-3 align-content-center justify-content-center" >
-          <img src="recursos/logo_solo_sin_leyenda.png" alt="happy_pocket_logo" class="img-fluid ms-0 ms-md-4 ">
+          <a href="index.php"><img src="recursos/logo_solo_sin_leyenda.png" alt="happy_pocket_logo" class="img-fluid ms-0 ms-md-4 "></a>
         </div>
         <div class="col-7 col-md my-3  ms-md-3 " >
               <h6 class="text-center text-light" >
@@ -56,6 +56,10 @@
   </footer>
  
   <!-- FOOTER -->
+
+ <?php
+require "modal_newsletter.php"
+ ?>
 
   <div class="  text-center align-content-center mt-3 " style="padding-bottom">
     <p class="fs-5">&copy Copyright Happy Pocket &bull; Todos los derechos reservados &bull; 2022</p>
